@@ -1,12 +1,45 @@
-ul,li{
+ul,ol,li{
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
+p,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+
+h3{
+	font-size: 16px;
+}
+
+h4{
+	font-size: 14px;
+}
+
+html{	
+	background: url(http://www.buaa.edu.cn/images/bg.jpg) no-repeat center center;
+	background-size: 100% auto;
+}
+
+.thumbnail{
+	background-color: rgba(78,86,161,0.4);
+	border: none;
+	border-radius: 0;
+    transition: all 0.25s ease-in-out 0s;
+}
+
+body{
+	margin: 0;
+	color: #fff;
+	font-family: 'microsoft yahei';
+	font-size: 12px;
+	line-height: 1.5;
+}
+
 .content{
 	margin: 0 auto;
-	width: 1024px;
+	width: 1160px;
 }
 
 .main{
@@ -18,11 +51,16 @@ ul,li{
 }
 
 .row-fluid ul{
-	width: 220px;
+	overflow: hidden;
+	width: 250px;
 }
 
 .row-fluid li{
-	float: left;
+	float: left;	
+	width: 120px;
+	height: 90px;
+	margin: 0 5px 5px 0;
+	background-color: rgba(78,86,161,0.4);
 }
 
 .row-fluid img{
@@ -32,17 +70,47 @@ ul,li{
 }
 
 .carousel{
+	position: relative;
 	float: left;
-	width: 570px;
+	margin-left: 5px;
+	width: 654px;
+	height: 376px;
 }
 
 .carousel-indicators{
+	display: none;
 	bottom: 0;
 	margin: 0 0 0 -50%;
-	width: 100%;
+	width: 100%; 
+    left: 50%;
+    padding-left: 0;
+    position: absolute;
+    text-align: center;
+    z-index: 15;
+}
+
+.carousel-indicators li {
+    background-color: #000;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    width: 10px;
+}
+
+.carousel-indicators .active {
+    background-color: #FFFFFF;
+    height: 12px;
+    margin: 0;
+    width: 12px;
 }
 
 .carousel-caption{
+	position: absolute;
+	text-align: center;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -50,21 +118,78 @@ ul,li{
 	background: rgba(0,0,0,0.6);
 }
 
-.thumbnail{
-	padding: 1px;
-	margin: 0 0 1px 0;
+.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner .item {
+	height: 100%;
+    display: none;
+    position: relative;
+    transition: left 0.6s ease-in-out 0s;
+}
+
+.carousel-inner .active{
+	display: block;
+}
+
+.carousel-inner .active,
+.carousel-inner .next,
+.carousel-inner .prev {
+  display: block;
+}
+
+.carousel-inner .active {
+  left: 0;
+}
+
+.carousel-inner .next,
+.carousel-inner .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-inner .next {
+  left: 100%;
+}
+
+.carousel-inner .prev {
+  left: -100%;
+}
+
+.carousel-inner .next.left,
+.carousel-inner .prev.right {
+  left: 0;
+}
+
+.carousel-inner .active.left {
+  left: -100%;
+}
+
+.carousel-inner .active.right {
+  left: 100%;
 }
 
 .web-info{
 	float: left;
+	padding: 10px;
 	margin: 0 0 10px 10px;
-	width: 213px;
-	height: 160px;
+	width: 220px;
+	height: 162px;
+}
+
+
+.web-info h4{
+	font-size: 14px;
+	text-align: center;
 }
 
 .header{
-	width: 1024px;
-	height: 100px;
+	height: 150px;
 	margin-bottom: 10px;
 }
 
@@ -76,7 +201,7 @@ ul,li{
     font-size: 44px;
     font-weight: 100;
     height: 40px;
-    left: 15px;
+    left: 5px;
     line-height: 28px;
     margin-top: -20px;
     opacity: 0.5;
@@ -85,54 +210,40 @@ ul,li{
     top: 40%;
     width: 40px;
 }
+.carousel-control.right{
+	left: auto;
+	right: 5px;
+}
 
-.footer {
-    background-color: #F5F5F5;
-    border-top: 1px solid #E5E5E5;
-    margin-top: 10px;
-    padding: 10px 0;
-    text-align: center;
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.carousel-inner img{
+    height: auto;
+    line-height: 1;
+    max-width: 100%;
+}
+
+.footer{
+	padding: 10px 0;
+	margin-bottom: 20px;
 }
 
 .footer ul{
 	overflow: hidden;
 	margin: 0 auto;
-	width: 175px;
+	width: 180px;
 }
 
 .footer li{
 	float: left;
 	padding: 0 10px;
-}
-
-.main-list{
-	float: left;
-	width: 750px;
-}
-
-.project-list{
-	border-top: none;
-	border-radius: 0 0 4px 4px;
-}
-
-.project-list li{
-	margin: 10px 20px;
-}
-
-.contact-fixed{
-	float: right;
-	width: 260px;
-	height: 230px;
-}
-
-.main-detail{
-	float: left;
-	width: 600px;
-	margin-right: 15px;
-}
-
-.detail-catalog{
-	float: left;
-	width: 134px;
-	margin-right: 15px;
+	font-size: 14px;
+	color: #fff;
 }
