@@ -38,19 +38,8 @@
 }
 
 .contact-fixed{
-	float: right;
-	width: 260px;
-	height: 230px;
-}
-
-.main-detail{
-	float: left;
-	width: 600px;
-	margin-right: 15px;
-}
-
-.detail-catalog{
-	float: left;
-	width: 134px;
-	margin-right: 15px;
+    float: right;
+    padding: 20px;
+    width: 220px;
+    height: 190px;
 }
