@@ -9,6 +9,7 @@
     <property name="connection.username">root</property>
     <property name="connection.password">root</property>
       <mapping class="com.gaokaoshu.entity.ViewCountEntity"/>
+      <mapping class="com.gaokaoshu.entity.BasicInfoEntity"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
