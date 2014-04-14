@@ -18,4 +18,12 @@ public class Constant {
      *  报考概述
      */
     public static int BASIC_INFO_BAOKAOGAISHU =  2;
+
+    public static final int BASIC_INFO_USER_ID = 3;
+
+    public static final int BASIC_INFO_PASSWORD = 4;
+    /**
+     * 用户是否是管理员的标示
+     */
+    public static final String IS_ADMIN = "is_admin";
 }

@@ -12,7 +12,15 @@
 </head>
 <body>
     <form action="/admin/index/update">
+        网站说明
         <input name="id" value="1" type="hidden" />
+        <textarea name="text"></textarea>
+        <button type="submit">提交</button>
+    </form>
+
+    <form action="/admin/index/update">
+        报考概述
+        <input name="id" value="2" type="hidden" />
         <textarea name="text"></textarea>
         <button type="submit">提交</button>
     </form>
