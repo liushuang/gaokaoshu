@@ -8,10 +8,14 @@ import org.hibernate.Session;
  * Created by liushuang.ls on 14-4-11.
  */
 public class ViewCountDAO {
-    public static int increateViewCount(int id){
+    public static int increaseViewCount(int id){
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
         ViewCountEntity viewCountEntity = (ViewCountEntity) session.byId(ViewCountEntity.class).load(id);
+        if(viewCountEntity == null){
+            viewCountEntity = new ViewCountEntity();
+            viewCountEntity.setId(id);
+        }
         viewCountEntity.setCount(viewCountEntity.getCount() + 1);
         session.saveOrUpdate(viewCountEntity);
         session.getTransaction().commit();
