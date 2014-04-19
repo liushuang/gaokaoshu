@@ -5,6 +5,7 @@ import com.gaokaoshu.util.SessionFactoryHelper;
 import org.hibernate.Session;
 
 /**
+ * 浏览数DAO
  * Created by liushuang.ls on 14-4-11.
  */
 public class ViewCountDAO {
