@@ -9,7 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +27,8 @@ public class AdminTypeController {
                 return "error";
             }
         }
-        List<TypeEntity> firstLevelList = TypeDAO.getAddTypeEntityByLevel(1);
-        List<TypeEntity> secondLevelList = TypeDAO.getAddTypeEntityByLevel(2);
+        List<TypeEntity> firstLevelList = TypeDAO.getTypeEntityByLevel(1);
+        List<TypeEntity> secondLevelList = TypeDAO.getTypeEntityByLevel(2);
         List<ResultTypeEntity> resultList = new ArrayList<ResultTypeEntity>();
         if(firstLevelList != null){
             for(TypeEntity type : firstLevelList){

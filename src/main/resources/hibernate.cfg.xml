@@ -10,6 +10,8 @@
     <property name="connection.password">root</property>
       <mapping class="com.gaokaoshu.entity.ViewCountEntity"/>
       <mapping class="com.gaokaoshu.entity.BasicInfoEntity"/>
+      <mapping class="com.gaokaoshu.entity.BlogEntity"/>
+      <mapping class="com.gaokaoshu.entity.TypeEntity"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

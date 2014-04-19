@@ -1,7 +1,6 @@
 package com.gaokaoshu.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by LiuShuang on 14-4-19.
@@ -77,5 +76,4 @@ public class TypeEntity {
         result = 31 * result + (level != null ? level.hashCode() : 0);
         return result;
     }
-
 }

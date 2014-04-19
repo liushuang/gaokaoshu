@@ -12,8 +12,8 @@
     <title></title>
 </head>
 <body>
-    <c:foreach var="item"  items="${list}" >
+    <c:forEach var="item"  items="${list}" >
         ${item.typeEntity.name}
-    </c:foreach>
+    </c:forEach>
 </body>
 </html>
