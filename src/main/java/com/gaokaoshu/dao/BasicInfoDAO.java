@@ -10,6 +10,7 @@ import org.hibernate.Session;
  * Created by liushuang.ls on 14-4-11.
  */
 public class BasicInfoDAO {
+
     public static BasicInfoEntity getBasicInfoById(int id) {
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
@@ -29,4 +30,5 @@ public class BasicInfoDAO {
         session.getTransaction().commit();
         session.close();
     }
+
 }
