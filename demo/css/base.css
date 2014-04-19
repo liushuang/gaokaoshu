@@ -1,0 +1,18 @@
+ul,li{
+	list-style: none;
+}
+.backstage {
+    float: left;
+    width: 33.3%;
+}
+.btn {
+	margin: 0 0 10px 10px;
+	width: 45%;
+	float: left;
+}
+.btn-block + .btn-block{
+	margin-top: 0;
+}
+.form-control{
+	margin: 5px 0 10px;
+}
