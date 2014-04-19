@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import java.util.List;
 
 /**
+ * 分类的DAO
  * Created by LiuShuang on 14-4-19.
  */
 public class TypeDAO {
@@ -42,12 +43,20 @@ public class TypeDAO {
         Criteria c = session.createCriteria(TypeEntity.class);
         c.add(Restrictions.eq("name", typeEntity.getName()));
         c.add(Restrictions.eq("level", typeEntity.getLevel()));
+        c.add(Restrictions.eq("fid", typeEntity.getfId()));
         List<TypeEntity> existTypeEntityList = c.list();
         if (existTypeEntityList != null && existTypeEntityList.size() > 0) {
             session.close();
             return;
         }
+        if(typeEntity.getLevel() == 2){ // 如果是添加学科，首先检查是否有对应的大类
+            TypeEntity fType = TypeDAO.getTypeById(typeEntity.getfId());
+            if(fType == null){
+                return;
+            }
+        }
         session.save(typeEntity);
+        session.getTransaction().commit();
         session.close();
     }
 

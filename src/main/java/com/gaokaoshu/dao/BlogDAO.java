@@ -24,10 +24,23 @@ public class BlogDAO {
         return blogEntity;
     }
 
+    public static void insertBlogEntity(BlogEntity blogEntity){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        Criteria c = session.createCriteria(BlogEntity.class);
+        c.add(Restrictions.eq("type_id", blogEntity.getTypeId()));
+        List<BlogEntity> blogEntityList = c.list();
+        if (blogEntityList != null && blogEntityList.size() > 0) {
+            return;
+        }
+        session.save(blogEntity);
+        session.getTransaction().commit();
+        session.close();
+    }
     public static BlogEntity getBlogByTypeId(int typeId){
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
-        Criteria c = session.createCriteria(TypeEntity.class);
+        Criteria c = session.createCriteria(BlogEntity.class);
         c.add(Restrictions.eq("type_id", typeId));
         List<BlogEntity> blogEntityList = c.list();
         if (blogEntityList != null && blogEntityList.size() > 0) {
