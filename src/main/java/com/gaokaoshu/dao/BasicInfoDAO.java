@@ -7,6 +7,7 @@ import com.gaokaoshu.util.SessionFactoryHelper;
 import org.hibernate.Session;
 
 /**
+ * 基本信息
  * Created by liushuang.ls on 14-4-11.
  */
 public class BasicInfoDAO {
