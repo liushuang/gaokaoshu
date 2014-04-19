@@ -4,32 +4,45 @@
     <title>Bootstrap 101 Template</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/base.css">
   </head>
   <body>
-  	<div class="contanier">
-		<ul class="backstage">
-  			<li>
-  				<form>
-					<label>学科分类</label>
-					<input class="form-control" type="text" />	
-				</form>
-				<form>
-					<label>学科信息：</label>
-					<input class="form-control" type="text" placeholder="标题" />
-					<input class="form-control" type="text" placeholder="链接" />
-				</form>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">增加学科</button>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">保存</button>	
-			</li>
-			<button class="btn btn-lg btn-success btn-block" type="submit">增加分类</button>
-			<button class="btn btn-lg btn-success btn-block" type="submit">保存</button>
-		</ul>
+    <div class="nav">
+      <a href="">首页</a>
+      <a href="">列表页</a>
+    </div>
+  	<div class="contanier clearfix">
+      <div class="backstage">
+        <div class="department">
+          <a href="javascript:void(0)">自然科学</a>
+          <div class="department-input">
+            <input class="div-control input-small input-name" type="text" /> 
+            <button class="btn btn-lg btn-success btn-block btn-small save-name" type="submit">保存</button> 
+          </div>
+        </div>
+        <ul class="course clearfix">
+          <li>
+            <a href="" target="_blank">地质学</a>
+          </li>
+          <li>
+            <a href="" target="_blank">地质学</a>
+          </li>
+          <li>
+            <a href="" target="_blank">地质学</a>
+          </li>
+        </ul>
+        <div class="add-btn clearfix">
+          <button class="btn btn-lg btn-primary btn-block add-course" type="submit">增加学科</button>
+          <button class="btn btn-lg btn-primary btn-block save-course" type="submit">保存</button>
+        </div>
+      </div>
   	</div>
-  </body>
-  <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+    <div class="add-btn clearfix" style="width:300px;">
+      <button class="btn btn-lg btn-success btn-block" type="submit" id="add-department">增加学科分类</button>
+      <button class="btn btn-lg btn-success btn-block" type="submit" id="save-department">保存</button>
+    </div>
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/backstage-list.js"></script>
   </body>
 </html>

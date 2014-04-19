@@ -4,55 +4,62 @@
     <title>Bootstrap 101 Template</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/base.css">
   </head>
   <body>
-  	<div class="contanier">
-  		<ul class="backstage">
-  			<li>
-  				<form>
-					<label>网站说明：</label>
-					<textarea class="form-control"></textarea>
-				</form>
-			</li>
-  			<li>
-  				<form>
-					<label>报考概述：</label>
-					<textarea class="form-control"></textarea>
-				</form>
-			</li>
-  			<li>
-  				<form>
-					<label>底部文案：</label>
-					<input class="form-control" type="text" />	
-				</form>
-			</li>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">增加文案</button>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">保存</button>
-		</ul>
-		<ul class="backstage">
-  			<li>
-  				<form>
-					<label>重点学科：</label>
-					<input class="form-control" type="text" />	
-				</form>
-				<form>
-					<label>重点学科图片和文字:</label>
-					<input class="form-control" type="text" placeholder="图片链接" />
-					<input class="form-control" type="text" placeholder="标题" />
-					<input class="form-control" type="text" placeholder="文案" />
-				</form>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">增加图片</button>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">保存</button>	
-			</li>
-			<button class="btn btn-lg btn-success btn-block" type="submit">增加学科</button>
-			<button class="btn btn-lg btn-success btn-block" type="submit">保存</button>
-		</ul>
+  	<div class="nav">
+  		<a href="">首页</a>
+  		<a href="">列表页</a>
   	</div>
+  	<div class="contanier clearfix">
+  		<div class="clearfix backstage">
+	  		<h3>网站信息</h3>
+	  		<ul>
+	  			<li class="clearfix">
+	  				<form name="web-info">
+						<label>网站说明：</label>
+						<textarea class="form-control text-web"></textarea>
+						<button class="btn btn-lg btn-primary btn-block save-web" type="submit">保存</button>
+					</form>
+				</li>
+	  			<li class="clearfix">
+	  				<form name="exam-info">
+						<label>报考概述：</label>
+						<textarea class="form-control text-exam"></textarea>
+						<button class="btn btn-lg btn-primary btn-block save-exam" type="submit">保存</button>
+					</form>
+				</li>
+			</ul>		
+		</div>
+  		<div class="clearfix backstage course-info">
+	  		<h3>学科信息</h3>
+			<div class="course-content">
+	  			<div class="course-main clearfix">
+	  				<div>
+						<label>重点学科：</label>
+						<input class="form-control" type="text" />	
+					</div>
+					<ul class="course-img">
+						<li>
+							<label>重点学科图片和文字:</label>
+							<input class="form-control course-imgurl" type="text" placeholder="图片链接" />
+							<input class="form-control course-title" type="text" placeholder="标题" />
+							<input class="form-control course-text" type="text" placeholder="文案" />
+						</li>
+					</ul>
+					<button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
+					<button class="btn btn-lg btn-primary btn-block img-save" type="submit">保存</button>	
+				</div>
+			</div>
+		</div>
+  	</div>
+    <div class="add-btn clearfix" style="width:300px;">
+	    <button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
+	    <button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
+    </div>
   </body>
-  <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../js/jQuery.js"></script>
   <script src="../js/bootstrap.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/backstage-index.js"></script>
   </body>
 </html>
