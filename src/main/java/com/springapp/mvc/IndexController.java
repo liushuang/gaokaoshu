@@ -15,7 +15,7 @@ public class IndexController {
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
         model.addAttribute("view_count", ViewCountDAO.increaseViewCount(Constant.VIEW_COUNT_INDEX));
-        model.addAttribute("web_introduction", BasicInfoDAO.getBasicInfoById(Constant.BASIC_INFO__WEB_INTRODUCTION));
-		return "hello";
+        model.addAttribute("web_introduction", BasicInfoDAO.getBasicInfoById(Constant.BASIC_INFO_WEB_INTRODUCTION));
+		return "index";
 	}
 }

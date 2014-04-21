@@ -49,4 +49,5 @@ public class BlogDAO {
         session.close();
         return null;
     }
+
 }

@@ -12,7 +12,7 @@ public class Constant {
     /**
      * 网站介绍
      */
-    public static int BASIC_INFO__WEB_INTRODUCTION = 1;
+    public static int BASIC_INFO_WEB_INTRODUCTION = 1;
 
     /**
      *  报考概述

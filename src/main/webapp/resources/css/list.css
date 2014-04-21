@@ -1,0 +1,45 @@
+.nav{
+	overflow: hidden;
+}
+
+.nav li{
+	float: left;
+}
+
+.nav  a {
+	position: relative;
+	display: block;
+	padding: 0 15px;
+	margin: 10px 0 10px 10px; 
+  	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.nav-tabs .active a{
+	background-color: #100A64;
+	color: #7BA7CE;
+}
+
+.project-list{
+	font-size: 14px;
+	border-radius: 0 0 4px 4px;
+}
+
+.project-list li{
+	margin: 0 20px;
+	padding: 10px;
+	border-bottom: 1px solid #5685B1
+}
+
+.main-list{
+	float: left;
+	width: 890px;
+}
+
+.contact-fixed{
+    float: right;
+    padding: 20px;
+    width: 220px;
+    height: 190px;
+}

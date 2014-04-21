@@ -4,7 +4,7 @@ import com.gaokaoshu.dao.TypeDAO;
 import com.gaokaoshu.entity.ResultTypeEntity;
 import com.gaokaoshu.entity.TypeEntity;
 import com.gaokaoshu.util.AdminUtil;
-import com.gaokaoshu.util.Constant;
+import com.mysql.jdbc.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +55,10 @@ public class AdminTypeController {
             model.addAttribute("message", "只有管理员可以使用");
             return "error";
         }
+        if(StringUtils.isEmptyOrWhitespaceOnly(name) ){
+            model.addAttribute("message", "名称不能为空");
+            return "redirect:/admin/adminType";
+        }
         TypeEntity typeEntity = new TypeEntity();
         typeEntity.setfId(0);
         typeEntity.setLevel(1);
@@ -69,6 +73,11 @@ public class AdminTypeController {
             model.addAttribute("message", "只有管理员可以使用");
             return "error";
         }
+        if(StringUtils.isEmptyOrWhitespaceOnly(name) || fid == 0){
+            model.addAttribute("message", "格式错误");
+            return "redirect:/admin/adminType";
+        }
+
         TypeEntity typeEntity = new TypeEntity();
         typeEntity.setfId(fid);
         typeEntity.setLevel(2);

@@ -1,0 +1,112 @@
+ul,li{
+	list-style: none;
+	padding: 0;
+}
+body{
+	line-height: 1.5;
+}
+.backstage {
+    float: left;
+    width: 30%;
+    margin-left: 20px;
+}
+.btn {
+	margin: 0 0 10px 10px;
+	width: 45%;
+	float: left;
+}
+.btn-block + .btn-block{
+	margin-top: 0;
+}
+.form-control{
+	margin: 5px 0 10px;
+}
+.department{
+	position: relative;
+	margin-right: 10px;
+}
+.department .department-input{
+	left: 8px;
+}
+.department-input{
+    position: absolute;
+    top: 0;
+}
+.department .department-input{	
+	display: none;
+}
+.department a{
+	padding-left: 10px;
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	line-height: 2;
+	background-color: #666;
+}
+.input-small{
+	margin: 2px;
+	float: left;
+	height: 28px;
+	width: 100px;
+}
+.btn-small{
+	width: 40px;
+	height: 28px;
+	margin: 2px;
+	padding: 0;
+	font-size: 14px;
+}
+.course {
+	padding-left: 10px;
+}
+.course li{
+	display: block;
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+}
+.add-btn{
+	width: 200px;
+}
+h3{
+	padding-left: 10px;
+	background-color: #666;
+	color: #fff;
+	margin: 0;
+	line-height: 1.5;
+}
+.course-info{
+	width: 20%;
+}
+.course-info label{
+	margin: 0;
+	line-height: 1.5;
+}
+.course-info input{
+	margin: 0 0 5px 0;
+	padding: 5px;
+	height: 28px;
+	line-height: 12px;
+}
+.course-info .btn{
+	margin: 0 10px 0 0;
+	padding:5px 0;
+	font-size: 12px;
+	width: 80px;
+}
+.course-content{
+	margin-bottom: 10px;
+}
+.nav a {
+    background-color: #ff6600;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 32px;
+    line-height: 2;
+    margin: 10px;
+    text-align: center;
+    width: 100px;
+}

@@ -74,10 +74,10 @@ public class TypeDAO {
         TypeEntity existTypeEntity = (TypeEntity)session.byId(TypeEntity.class).load(id);
         if(existTypeEntity != null){
             if(existTypeEntity.getLevel() == 1){// 如果是学科大类，删除所有小分类
-                //String sqlDeleteSecondType = "DELETE TypeEntity WHERE fId = ?";
-                //Query q = session.createQuery(sqlDeleteSecondType);
-                //q.setInteger(0, existTypeEntity.getId());
-                //q.executeUpdate();
+                String sqlDeleteSecondType = "DELETE TypeEntity WHERE fId = ?";
+                Query q = session.createQuery(sqlDeleteSecondType);
+                q.setInteger(0, existTypeEntity.getId());
+                q.executeUpdate();
                 session.delete(existTypeEntity);
                 session.getTransaction().commit();
             }
