@@ -12,6 +12,7 @@
       <mapping class="com.gaokaoshu.entity.BasicInfoEntity"/>
       <mapping class="com.gaokaoshu.entity.BlogEntity"/>
       <mapping class="com.gaokaoshu.entity.TypeEntity"/>
+      <mapping class="com.gaokaoshu.entity.UploadFileEntity"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

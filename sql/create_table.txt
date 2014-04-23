@@ -1,0 +1,24 @@
+CREATE TABLE `basic_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `view_count` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `count` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `upload_file` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_name` varchar(256) DEFAULT NULL COMMENT '原始文件名',
+  `file_name` varchar(256) DEFAULT NULL COMMENT '磁盘中文件名',
+  `file_path` varchar(256) DEFAULT NULL COMMENT '文件路径',
+  `blog_id` int(11) DEFAULT NULL COMMENT '日志id',
+  `type_id` int(11) DEFAULT NULL COMMENT '科目id',
+  `create_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
