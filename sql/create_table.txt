@@ -22,3 +22,13 @@ CREATE TABLE `upload_file` (
   `create_datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `hot_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_level` int(11) DEFAULT NULL COMMENT '热门分类还是热门专业',
+  `type_id` int(11) DEFAULT NULL,
+  `img_url` varchar(256) DEFAULT NULL COMMENT '图片链接',
+  `desc` varchar(256) DEFAULT NULL COMMENT '文字描述',
+  `create_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

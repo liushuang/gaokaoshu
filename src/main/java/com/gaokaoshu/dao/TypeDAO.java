@@ -43,7 +43,7 @@ public class TypeDAO {
         Criteria c = session.createCriteria(TypeEntity.class);
         c.add(Restrictions.eq("name", typeEntity.getName()));
         c.add(Restrictions.eq("level", typeEntity.getLevel()));
-        c.add(Restrictions.eq("fid", typeEntity.getfId()));
+        c.add(Restrictions.eq("fId", typeEntity.getfId()));
         List<TypeEntity> existTypeEntityList = c.list();
         if (existTypeEntityList != null && existTypeEntityList.size() > 0) {
             session.close();
@@ -55,6 +55,8 @@ public class TypeDAO {
                 return;
             }
         }
+        session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
         session.save(typeEntity);
         session.getTransaction().commit();
         session.close();

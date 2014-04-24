@@ -15,5 +15,10 @@
     <c:forEach var="item"  items="${list}" >
         ${item.typeEntity.name}
     </c:forEach>
+
+    <form action="/admin/addFirstType" method="post">
+        <input type="text" name="name" />
+        <button type="submit" >save</button>
+    </form>
 </body>
 </html>
