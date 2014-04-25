@@ -18,15 +18,15 @@
 	  			<li class="clearfix">
 	  				<form name="web-info">
 						<label>网站说明：</label>
-						<textarea class="form-control text-web"></textarea>
-						<button class="btn btn-lg btn-primary btn-block save-web" type="submit">保存</button>
+						<textarea id="webinfo-text" class="form-control text-web"></textarea>
+						<button id="webinfo-save" class="btn btn-lg btn-primary btn-block save-web" type="submit">保存</button>
 					</form>
 				</li>
 	  			<li class="clearfix">
 	  				<form name="exam-info">
 						<label>报考概述：</label>
-						<textarea class="form-control text-exam"></textarea>
-						<button class="btn btn-lg btn-primary btn-block save-exam" type="submit">保存</button>
+						<textarea id="examinfo-text" class="form-control text-exam"></textarea>
+						<button id="examinfo-save" class="btn btn-lg btn-primary btn-block save-exam" type="submit">保存</button>
 					</form>
 				</li>
 			</ul>		
@@ -35,14 +35,13 @@
 	  		<h3>学科信息</h3>
 			<div class="course-content">
 	  			<div class="course-main clearfix">
-	  				<div>
-						<label>重点学科：</label>
-						<input class="form-control" type="text" placeholder="标题" />	
-						<input class="form-control" type="text" placeholder="链接"/>	
-					</div>					
+					<label>重点学科：</label>
+					<input class="form-control course-id" type="text" placeholder="学科ID" />	
+					<input class="form-control course-link" type="text" placeholder="链接"/>			
 				</div>
 			</div>
 	    	<button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
+	    	<button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
 		</div>
 		<div class="clearfix backstage course-info">
 	  		<h3>轮播图</h3>
@@ -50,10 +49,10 @@
 				<li>
 					<label>图片和文字:</label>
 					<i>×</i>
-					<input class="form-control course-imgurl" type="text" placeholder="图片链接" />
-					<input class="form-control course-title" type="text" placeholder="标题" />
-					<input class="form-control course-text" type="text" placeholder="文案" />
-					<input class="form-control course-link" type="text" placeholder="链接"/>	
+					<input class="form-control textimg-imgurl" type="text" placeholder="图片链接" />
+					<input class="form-control textimg-title" type="text" placeholder="标题" />
+					<input class="form-control textimg-text" type="text" placeholder="文案" />
+					<input class="form-control textimg-link" type="text" placeholder="链接"/>	
 				</li>
 			</ul>
 			<button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
