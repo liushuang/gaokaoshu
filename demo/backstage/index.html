@@ -37,25 +37,38 @@
 	  			<div class="course-main clearfix">
 	  				<div>
 						<label>重点学科：</label>
-						<input class="form-control" type="text" />	
-					</div>
-					<ul class="course-img">
-						<li>
-							<label>重点学科图片和文字:</label>
-							<input class="form-control course-imgurl" type="text" placeholder="图片链接" />
-							<input class="form-control course-title" type="text" placeholder="标题" />
-							<input class="form-control course-text" type="text" placeholder="文案" />
-						</li>
-					</ul>
-					<button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
-					<button class="btn btn-lg btn-primary btn-block img-save" type="submit">保存</button>	
+						<input class="form-control" type="text" placeholder="标题" />	
+						<input class="form-control" type="text" placeholder="链接"/>	
+					</div>					
 				</div>
 			</div>
+	    	<button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
+		</div>
+		<div class="clearfix backstage course-info">
+	  		<h3>轮播图</h3>
+	  		<ul class="course-img">
+				<li>
+					<label>图片和文字:</label>
+					<i>×</i>
+					<input class="form-control course-imgurl" type="text" placeholder="图片链接" />
+					<input class="form-control course-title" type="text" placeholder="标题" />
+					<input class="form-control course-text" type="text" placeholder="文案" />
+					<input class="form-control course-link" type="text" placeholder="链接"/>	
+				</li>
+			</ul>
+			<button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
+			<button class="btn btn-lg btn-primary btn-block img-save" type="submit">保存</button>	
 		</div>
   	</div>
-    <div class="add-btn clearfix" style="width:300px;">
-	    <button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
-	    <button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
+    <div class="add-btn clearfix" style="width:300px;margin:0 auto">
+	    <button class="btn btn-lg btn-success btn-block" style="width:100%;" type="submit" id="save-course">保存</button>
+    </div>
+    <div class="will-delete">
+        <div class="will-delete-content">
+            <p>确定删除吗，删除之后将无法恢复！</p>        
+            <button id="is-delete">确定</button>
+            <button id="no-delete">取消</button>
+        </div>
     </div>
 	<script type="text/javascript" src="../js/jQuery.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.js"></script>

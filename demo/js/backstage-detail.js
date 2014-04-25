@@ -1,111 +1,42 @@
-
 //实例化编辑器
-//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-UE.getEditor('editor');
+UM.getEditor('myEditor1');
+// //按钮的操作
+// $('.getcontent').click{
+//     var arr = [];
+//     arr.push(UM.getEditor('myEditor1').getContent());
+//     alert(arr);
+// }
 
+var num = $('.text-area').length;
 
-function isFocus(e){
-    alert(UE.getEditor('editor').isFocus());
-    UE.dom.domUtils.preventDefault(e)
-}
-function setblur(e){
-    UE.getEditor('editor').blur();
-    UE.dom.domUtils.preventDefault(e)
-}
-function insertHtml() {
-    var value = prompt('插入html代码', '');
-    UE.getEditor('editor').execCommand('insertHtml', value)
-}
-function createEditor() {
-    enableBtn();
-    UE.getEditor('editor');
-}
-function getAllHtml() {
-    alert(UE.getEditor('editor').getAllHtml())
-}
-function getContent() {
-    var arr = [];
-    arr.push("使用editor.getContent()方法可以获得编辑器的内容");
-    arr.push("内容为：");
-    arr.push(UE.getEditor('editor').getContent());
-    alert(arr.join("\n"));
-}
-function getPlainTxt() {
-    var arr = [];
-    arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
-    arr.push("内容为：");
-    arr.push(UE.getEditor('editor').getPlainTxt());
-    alert(arr.join('\n'))
-}
-function setContent(isAppendTo) {
-    var arr = [];
-    arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
-    UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
-    alert(arr.join("\n"));
-}
-function setDisabled() {
-    UE.getEditor('editor').setDisabled('fullscreen');
-    disableBtn("enable");
-}
+$('#add-editor').click(function() {
+    num ++;
+    $('.container').append('<div class="text-area"><div class="clearfix text-title"><label>重点学科：</label><input type="text" class="form-control" id="input-title' + num + '"><button class="btn btn-lg btn-primary btn-block delete-editor">删除小节</button></div><script type="text/plain" id="myEditor' + num + '" style="width:1000px;height:240px;">请输入内容</script></div>');
+    var idName = 'myEditor' + num;
+	UM.getEditor(idName);
+});
 
-function setEnabled() {
-    UE.getEditor('editor').setEnabled();
-    enableBtn();
-}
+$('#save-editor').click(function() {
+	var arrText = [];
+	for( var i = 1; i <= num; i++){	
+    	var idName = 'myEditor' + i;    
+	    arrText.push( UM.getEditor(idName).getContent() );
+	}
+	var arrTitle = [];	
+	for( var j = 1; j <= num; j++){	
+    	var inputName = 'input-title' + j;    
+	    arrTitle.push( $('#input-title'+j).val() );
+	}
+});
 
-function getText() {
-    //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
-    var range = UE.getEditor('editor').selection.getRange();
-    range.select();
-    var txt = UE.getEditor('editor').selection.getText();
-    alert(txt)
-}
-
-function getContentTxt() {
-    var arr = [];
-    arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
-    arr.push("编辑器的纯文本内容为：");
-    arr.push(UE.getEditor('editor').getContentTxt());
-    alert(arr.join("\n"));
-}
-function hasContent() {
-    var arr = [];
-    arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
-    arr.push("判断结果为：");
-    arr.push(UE.getEditor('editor').hasContents());
-    alert(arr.join("\n"));
-}
-function setFocus() {
-    UE.getEditor('editor').focus();
-}
-function deleteEditor() {
-    disableBtn();
-    UE.getEditor('editor').destroy();
-}
-function disableBtn(str) {
-    var div = document.getElementById('btns');
-    var btns = domUtils.getElementsByTagName(div, "button");
-    for (var i = 0, btn; btn = btns[i++];) {
-        if (btn.id == str) {
-            domUtils.removeAttributes(btn, ["disabled"]);
-        } else {
-            btn.setAttribute("disabled", "true");
-        }
-    }
-}
-function enableBtn() {
-    var div = document.getElementById('btns');
-    var btns = domUtils.getElementsByTagName(div, "button");
-    for (var i = 0, btn; btn = btns[i++];) {
-        domUtils.removeAttributes(btn, ["disabled"]);
-    }
-}
-
-function getLocalData () {
-    alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
-}
-
-function clearLocalData () {
-    UE.getEditor('editor').execCommand( "clearlocaldata" );
-    alert("已清空草稿箱")
-}
+$('.delete-editor').live('click',function(){
+	var that = this;
+	$('.will-delete').show();
+	$('#is-delete').click(function(event) {
+		$(that).parent().parent().remove();
+		$('.will-delete').hide();
+	});
+	$('#no-delete').click(function(event) {
+		$('.will-delete').hide();
+	});
+})

@@ -9,3 +9,15 @@ $('#add-department').click(function() {
 $('.department a').live('click', function() {
 	$(this).parent().find('.department-input').show();
 });
+
+$('.course i').live('click',function(){
+	var that = this;
+	$('.will-delete').show();
+	$('#is-delete').click(function(event) {
+		$(that).parent().remove();
+		$('.will-delete').hide();
+	});
+	$('#no-delete').click(function(event) {
+		$('.will-delete').hide();
+	});
+})
