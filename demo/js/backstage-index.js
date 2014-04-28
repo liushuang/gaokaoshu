@@ -9,8 +9,8 @@ $('#add-course').click(function() {
 $('#save-course').click(function() {
 	var index = $('.course-main').length;
 	for( var i = 0; i < index; i ++){		
-		var courseId = $('.course-main').eq(i).find('.course-id').val,
-			courseLink = $('.course-main').eq(i).find('.course-link').val;
+		var courseId = $('.course-main').eq(i).find('.course-id').val(),
+			courseLink = $('.course-main').eq(i).find('.course-link').val();
 		$.ajax({
 		  	type: 'POST',
 		  	url: '/admin/index/insertHotType?level=1&typeId='+courseId+'&desc='+courseLink
@@ -21,10 +21,10 @@ $('#save-course').click(function() {
 $('#save-course').click(function() {
 	var index = $('.course-img li').length;
 	for( var i = 0; i < index; i ++){		
-		var textimgImgurl = $('.course-img li').eq(i).find('.textimg-imgurl').val,
-			textimgTitle = $('.course-img li').eq(i).find('.textimg-titlerl').val,
-			textimgText = $('.course-img li').eq(i).find('.textimg-text').val,
-			textimgLink = $('.course-img li').eq(i).find('.textimg-link').val;
+		var textimgImgurl = $('.course-img li').eq(i).find('.textimg-imgurl').val(),
+			textimgTitle = $('.course-img li').eq(i).find('.textimg-titlerl').val(),
+			textimgText = $('.course-img li').eq(i).find('.textimg-text').val(),
+			textimgLink = $('.course-img li').eq(i).find('.textimg-link').val();
 		$.ajax({
 		  	type: 'POST',
 		  	url: /admin/index/insertHotType?level=2&typeId=type_id&desc=desc&img=img(type_id:学科id,img:展示图片)
