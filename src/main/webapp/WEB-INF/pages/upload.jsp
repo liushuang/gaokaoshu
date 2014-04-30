@@ -17,7 +17,7 @@
         </div>
         <label for="file">File</label>
         <input id="file" type="file" name="file"/>
-
+        <input type="hidden" name="blogId" value="1" />
         <p>
             <button type="submit">Upload</button>
         </p>

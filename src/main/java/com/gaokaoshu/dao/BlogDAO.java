@@ -50,4 +50,12 @@ public class BlogDAO {
         return null;
     }
 
+    public static void updateBlogEntity(BlogEntity blogEntity){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(blogEntity);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }
