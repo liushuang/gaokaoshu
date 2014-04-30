@@ -44,7 +44,7 @@ public class FileController {
             dir.mkdir();
         }
         String originalFileName = file.getOriginalFilename();
-        String localFileName = "";
+        String localFileName ;
         if(originalFileName.indexOf(".") != -1){
             int separator = originalFileName.lastIndexOf(".");
             localFileName = originalFileName.substring(0,separator) + System.currentTimeMillis() + originalFileName.substring(separator);

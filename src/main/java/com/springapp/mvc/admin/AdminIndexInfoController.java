@@ -64,19 +64,27 @@ public class AdminIndexInfoController {
             model.addAttribute("message", "只有管理员可以进入");
             return "error";
         }
-        String filePath = session.getServletContext().getRealPath("/") + "images/";
+        String filePath = session.getServletContext().getRealPath("/") + "resources/images/";
         File dir = new File(filePath);
         if(!dir.exists()){
             dir.mkdir();
         }
-        File localFile = new File(filePath + img.getOriginalFilename() + System.currentTimeMillis());
+        String originalFileName = img.getOriginalFilename();
+        String localFileName ;
+        if(originalFileName.indexOf(".") != -1){
+            int separator = originalFileName.lastIndexOf(".");
+            localFileName = originalFileName.substring(0,separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+        }else{
+            localFileName = originalFileName + System.currentTimeMillis();
+        }
+        File localFile = new File(filePath + localFileName);
         img.transferTo(localFile);
         HotTypeEntity hotTypeEntity = new HotTypeEntity();
         hotTypeEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
-        hotTypeEntity.setDesc(desc);
+        hotTypeEntity.setDescription(desc);
         hotTypeEntity.setTypeId(typeId);
         hotTypeEntity.setTypeLevel(level);
-        hotTypeEntity.setImgUrl(localFile.getPath());
+        hotTypeEntity.setImgUrl("/resources/images/" + localFileName);
 
         HotTypeDAO.insertHotTypeEntity(hotTypeEntity);
         return "redirect:/admin/adminIndex";

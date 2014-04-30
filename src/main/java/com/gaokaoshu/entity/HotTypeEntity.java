@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liushuang.ls on 14-4-24.
+ * Created by liushuang.ls on 14-4-30.
  */
 @Entity
 @Table(name = "hot_type", schema = "", catalog = "gaokao_db")
@@ -13,7 +13,7 @@ public class HotTypeEntity {
     private Integer typeLevel;
     private Integer typeId;
     private String imgUrl;
-    private String desc;
+    private String description;
     private Timestamp createDatetime;
 
     @Id
@@ -57,13 +57,13 @@ public class HotTypeEntity {
     }
 
     @Basic
-    @Column(name = "desc")
-    public String getDesc() {
-        return desc;
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Basic
@@ -86,7 +86,7 @@ public class HotTypeEntity {
         if (id != that.id) return false;
         if (createDatetime != null ? !createDatetime.equals(that.createDatetime) : that.createDatetime != null)
             return false;
-        if (desc != null ? !desc.equals(that.desc) : that.desc != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (imgUrl != null ? !imgUrl.equals(that.imgUrl) : that.imgUrl != null) return false;
         if (typeId != null ? !typeId.equals(that.typeId) : that.typeId != null) return false;
         if (typeLevel != null ? !typeLevel.equals(that.typeLevel) : that.typeLevel != null) return false;
@@ -100,7 +100,7 @@ public class HotTypeEntity {
         result = 31 * result + (typeLevel != null ? typeLevel.hashCode() : 0);
         result = 31 * result + (typeId != null ? typeId.hashCode() : 0);
         result = 31 * result + (imgUrl != null ? imgUrl.hashCode() : 0);
-        result = 31 * result + (desc != null ? desc.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (createDatetime != null ? createDatetime.hashCode() : 0);
         return result;
     }

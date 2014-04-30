@@ -65,5 +65,26 @@
     <button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
     <button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
 </div>
+<div>
+    增加一级热门学科
+    <form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="level" value="1" />
+        学科id：<input type="text" name="typeId" placeholder=""/>
+        描述：<input type="text" name="desc" />
+        <input type="file" name="img"/>
+
+        <button type="submit" >保存</button>
+    </form>
+
+    增加二级热门学科
+    <form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="level" value="2" />
+        学科id：<input type="text" name="typeId" placeholder=""/>
+        描述：<input type="text" name="desc" />
+        <input type="file" name="img"/>
+
+        <button type="submit" >保存</button>
+    </form>
+</div>
 </body>
 </html>
