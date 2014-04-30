@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
-<div class="header">
+<div class="header ">
     <div class="header-box">
         <div class="logo">
             <a href=""></a>
         </div>
         <div class="main-nav">
             <ul>
-                <li><a href="">首页</a></li>
-                <li class="home-select nav-select"><a href="">列表页</a></li>
+                <li ><a href="/">首页</a></li>
+                <li class="home-select nav-select"><a href="/list">列表页</a></li>
                 <li><a href="">联系我们</a></li>
             </ul>
         </div>

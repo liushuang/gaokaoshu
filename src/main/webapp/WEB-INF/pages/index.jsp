@@ -14,8 +14,8 @@
             </div>
             <div class="main-nav">
                 <ul>
-                    <li class="home-select nav-select"><a href="">首页</a></li>
-                    <li><a href="">列表页</a></li>
+                    <li class="home-select nav-select"><a href="/">首页</a></li>
+                    <li><a href="/list">列表页</a></li>
                     <li><a href="">联系我们</a></li>
                 </ul>
             </div>
