@@ -40,7 +40,7 @@ public class AdminBlogController {
         }
         BlogEntity blogEntity = new BlogEntity();
         blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
-        blogEntity.setText(content);
+        blogEntity.setContent(content);
         blogEntity.setTypeId(typeId);
         BlogDAO.insertBlogEntity(blogEntity);
         return "redirect:/admin/adminType";
@@ -57,7 +57,7 @@ public class AdminBlogController {
 
         BlogEntity blogEntity = BlogDAO.getBlogByid(blogId);
         if(blogEntity != null){
-            blogEntity.setText(content);
+            blogEntity.setContent(content);
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
             BlogDAO.updateBlogEntity(blogEntity);
         }

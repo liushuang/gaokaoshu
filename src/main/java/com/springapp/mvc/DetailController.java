@@ -15,12 +15,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class DetailController {
-    @RequestMapping(value = "/detail/{id}")
-    public String detail(ModelMap model,@PathVariable int id){
+    @RequestMapping(value = "/blog/{id}")
+    public String blog(ModelMap model, @PathVariable int id) {
         BlogEntity blogEntity = BlogDAO.getBlogByid(id);
+        if (blogEntity == null) {
+            return "error";
+        }
         TypeEntity typeEntity = TypeDAO.getTypeById(blogEntity.getTypeId());
-        model.addAttribute("blog",blogEntity);
-        model.addAttribute("type",typeEntity);
+        model.addAttribute("blog", blogEntity);
+        model.addAttribute("type", typeEntity);
+        return "detail";
+    }
+
+    @RequestMapping(value = "/type/{id}")
+    public String type(ModelMap model, @PathVariable int id) {
+        BlogEntity blogEntity = BlogDAO.getBlogByTypeId(id);
+        if (blogEntity == null) {
+            return "error";
+        }
+        TypeEntity typeEntity = TypeDAO.getTypeById(blogEntity.getTypeId());
+        model.addAttribute("blog", blogEntity);
+        model.addAttribute("type", typeEntity);
         return "detail";
     }
 }
