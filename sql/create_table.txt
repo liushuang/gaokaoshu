@@ -11,6 +11,13 @@ CREATE TABLE `view_count` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` text,
+  `type_id` int(11) DEFAULT NULL COMMENT '专业id',
+  `create_datetime` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `upload_file` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
