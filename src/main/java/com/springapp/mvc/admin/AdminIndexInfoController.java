@@ -64,7 +64,7 @@ public class AdminIndexInfoController {
             model.addAttribute("message", "只有管理员可以进入");
             return "error";
         }
-        String filePath = session.getServletContext().getRealPath("/") + "resources/images/";
+        String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
         File dir = new File(filePath);
         if(!dir.exists()){
             dir.mkdir();

@@ -38,7 +38,7 @@ public class FileController {
 
     @RequestMapping(value = "/admin/upload", method = RequestMethod.POST)
     public String processUpload(@RequestParam MultipartFile file, Model model, HttpSession session, int blogId) throws IOException {
-        String filePath = session.getServletContext().getRealPath("/") + "upload/";
+        String filePath = session.getServletContext().getRealPath("/") + "/upload/";
         File dir = new File(filePath);
         if(!dir.exists()){
             dir.mkdir();
