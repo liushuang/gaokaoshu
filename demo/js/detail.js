@@ -11,10 +11,11 @@ $.ajax({
 		for( var i = 0; i < index; i ++ ){
 			$('.single-panel-body').append( '<h4 class="blog-title" id="blog-title' + i + '">' + contentAll.title[i] + '</h4>' +  contentAll.text[i]);
 			$('.nav').append( '<li><a data-local="' + i + '">' + contentAll.title[i] + '</a></li>');
-		}
+		};
 	}
 });
 
+// var data = '{"blogtitle":"123","title":["123","456"],"text":["123","456"]}';
 // var contentAll = eval('(' + data + ')'); 
 // var index = contentAll.text.length;
 // $('.single-panel-header h3').text(contentAll.blogtitle);
