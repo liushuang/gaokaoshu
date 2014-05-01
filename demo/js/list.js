@@ -7,7 +7,7 @@ $(window).scroll(function(event) {
 });
 
 $('.nav li').eq(0).addClass('active');
-$('.project-list').addClass('active');
+$('.project-list').eq(0).addClass('active');
 $('.nav li').click(function(event) {
 	var index = $('.nav li').index($(this));
 	$(this).addClass('active').siblings().removeClass('active');
