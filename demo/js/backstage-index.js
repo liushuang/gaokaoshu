@@ -1,33 +1,19 @@
 $('.img-add').live('click', function() {
-	$(this).parent().find('.course-img').append('<li><label>图片和文字:</label><i>×</i><input class="form-control course-imgurl" type="text" placeholder="图片链接" /><input class="form-control course-title" type="text" placeholder="标题" /><input class="form-control course-text" type="text" placeholder="文案" /><input class="form-control course-link" type="text" placeholder="链接"/></li>')
+	$(this).parent().find('.course-img').append('<li><label>图片和文字:</label><i>×</i><form enctype="multipart/form-data" method="post" action="/admin/index/insertHotType"><input type="hidden" value="1" name="level"><input type="text" placeholder="学科id" name="typeId"><input type="text" placeholder="描述" name="desc"><input type="file" name="img"><button class="btn btn-lg btn-success btn-block" type="submit">保存</button></form></li>')
 });
 
 $('#add-course').click(function() {
-	$('.course-content').append('<div class="course-main clearfix"><label>重点学科：</label><input class="form-control" type="text" placeholder="标题" /><input class="form-control" type="text" placeholder="链接"/></div>')
+	$('.course-content').append('<div class="course-main clearfix"><label>重点学科：</label><input type="text" placeholder="学科ID" class="form-control course-id"><input type="text" placeholder="学科名" class="form-control course-title"></div>')
 });
 
 $('#save-course').click(function() {
 	var index = $('.course-main').length;
 	for( var i = 0; i < index; i ++){		
 		var courseId = $('.course-main').eq(i).find('.course-id').val(),
-			courseLink = $('.course-main').eq(i).find('.course-link').val();
+			courseTitle = $('.course-main').eq(i).find('.course-title').val();
 		$.ajax({
 		  	type: 'POST',
-		  	url: '/admin/index/insertHotType?level=1&typeId='+courseId+'&desc='+courseLink
-		});
-	}
-});
-
-$('#save-course').click(function() {
-	var index = $('.course-img li').length;
-	for( var i = 0; i < index; i ++){		
-		var textimgImgurl = $('.course-img li').eq(i).find('.textimg-imgurl').val(),
-			textimgTitle = $('.course-img li').eq(i).find('.textimg-titlerl').val(),
-			textimgText = $('.course-img li').eq(i).find('.textimg-text').val(),
-			textimgLink = $('.course-img li').eq(i).find('.textimg-link').val();
-		$.ajax({
-		  	type: 'POST',
-		  	url: '/admin/index/insertHotType?level=2&typeId=type_id&desc=desc&img=img'
+		  	url: '/admin/index/insertHotType?level=1&typeId='+courseId+'&desc='+courseTitle
 		});
 	}
 });

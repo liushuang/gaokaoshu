@@ -83,6 +83,7 @@ h3{
 	padding: 5px;
 	height: 28px;
 	line-height: 12px;
+	width: 100%;
 }
 .course-info .btn{
 	margin: 0 10px 0 0;
@@ -143,6 +144,7 @@ h3{
 }
 .course li, .course-img li{
 	position: relative;
+	overflow: hidden;
 }
 .course li i, .course-img li i, .department i {
     background-color: #ccc;

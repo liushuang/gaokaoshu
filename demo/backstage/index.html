@@ -37,7 +37,7 @@
 	  			<div class="course-main clearfix">
 					<label>重点学科：</label>
 					<input class="form-control course-id" type="text" placeholder="学科ID" />	
-					<input class="form-control course-link" type="text" placeholder="链接"/>			
+					<input class="form-control course-title" type="text" placeholder="学科名"/>			
 				</div>
 			</div>
 	    	<button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
@@ -49,14 +49,16 @@
 				<li>
 					<label>图片和文字:</label>
 					<i>×</i>
-					<input class="form-control textimg-imgurl" type="text" placeholder="图片链接" />
-					<input class="form-control textimg-title" type="text" placeholder="标题" />
-					<input class="form-control textimg-text" type="text" placeholder="文案" />
-					<input class="form-control textimg-link" type="text" placeholder="链接"/>	
+					<form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
+				        <input type="hidden" name="level" value="1" />
+				        <input type="text" name="link" placeholder="链接" />
+				        <input type="text" name="desc" placeholder="描述" />
+				        <input type="file" name="img" />
+				        <button type="submit" class="btn btn-lg btn-success btn-block">保存</button>
+				    </form>
 				</li>
 			</ul>
 			<button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
-			<button class="btn btn-lg btn-primary btn-block img-save" type="submit">保存</button>	
 		</div>
   	</div>
     <div class="add-btn clearfix" style="width:300px;margin:0 auto">
