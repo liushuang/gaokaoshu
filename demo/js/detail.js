@@ -10,7 +10,7 @@ $.ajax({
 		$('.single-panel-header h3').text(contentAll.blogtitle);
 		for( var i = 0; i < index; i ++ ){
 			$('.single-panel-body').append( '<h4 class="blog-title" id="blog-title' + i + '">' + contentAll.title[i] + '</h4>' +  contentAll.text[i]);
-			$('.nav').append( '<li><a href="#blog-title' + i + '">' + contentAll.title[i] + '</a></li>');
+			$('.nav').append( '<li><a data-local="' + i + '">' + contentAll.title[i] + '</a></li>');
 		}
 	}
 });

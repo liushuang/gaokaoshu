@@ -34,7 +34,6 @@
 </div>
 <div class="content">
     <ul class="nav nav-tabs">
-        <li><a href="#"></a></li>
     </ul>
     <div class="single-panel-inner">
         <div class="single-panel-header">
