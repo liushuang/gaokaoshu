@@ -1,6 +1,5 @@
 $('.add-course').live('click', function() {
 	var	courseId = $(this).parent().parent().find('.department a').attr('data-id');
-	console.log($(this).parent().parent());
 	$(this).parent().parent().find('ul').append('<li><form class="department-input" name="course-name" action="/admin/addSecondType" method="post"><input type="hidden" name="fid" value="' + courseId + '" /><input type="text" class="div-control input-small input-coursename" name="name" /><button class="btn btn-lg btn-success btn-block btn-small" type="submit">保存</button></form></li>')
 });
 
