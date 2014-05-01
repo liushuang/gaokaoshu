@@ -45,7 +45,7 @@ $('#save-editor').click(function() {
 			type: 'post',
 			url: '/admin/addBlog?typeId=' + typeId + '&content=' + contentJson
 		})
-	};
+	}
 	else{
 		$.ajax({
 			type: 'post',
