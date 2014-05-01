@@ -19,9 +19,8 @@ $.ajax({
 	}
 });
 
-var num = $('.text-area').length;
-
 $('#add-editor').click(function() {
+	var num = $('.text-area').length;
     num ++;
     $('.container').append('<div class="text-area"><div class="clearfix text-title"><label>小标题：</label><input type="text" class="form-control" id="input-title' + num + '"><button class="btn btn-lg btn-primary btn-block delete-editor">删除小节</button></div><script type="text/plain" id="myEditor' + num + '" style="width:1000px;height:240px;">请输入内容</script></div>');
     var idName = 'myEditor' + num;
@@ -29,10 +28,10 @@ $('#add-editor').click(function() {
 });
 
 $('#save-editor').click(function() {
-	var arrText = [],
+	var num = $('.text-area').length,
+		arrText = [],
 		arrTitle = [],
 		blogTitle = $('#blog-title').val();
-	console.log(num);
 	for( var i = 1; i <= num; i++){	
     	var idName = 'myEditor' + i;    
 	    arrText.push( UM.getEditor(idName).getContent() );
@@ -47,8 +46,6 @@ $('#save-editor').click(function() {
 		'text' : arrText
 	};
 	var contentStr = JSON.stringify( contentJson );
-	console.log(contentJson);
-	console.log(contentStr);
 	if( blogId == 0 ){
 		$.ajax({
 			type: 'post',
@@ -85,7 +82,7 @@ $('#save-editor').click(function() {
 	};
 });
 
-$('.delete-editor').live('click',function(){
+$('.delete-editor').live('click',function(){	
 	var that = this;
 	$('.will-delete').show();
 	$('#is-delete').click(function(event) {
