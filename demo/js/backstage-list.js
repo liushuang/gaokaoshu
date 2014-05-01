@@ -49,7 +49,7 @@ $('.save-coursename').live('click',function(){
 		cousrseId = $(this).parent().parent().parent().parent().find('.department a').attr('data-id');
 	$.ajax({
 	  	type: 'POST',
-	  	url: '/admin/addSecondType?name=' + courseName + '&fid=f_id' + cousrseId
+	  	url: '/admin/addSecondType?name=' + courseName + '&fid=' + cousrseId
 	});	
 })
 
@@ -58,7 +58,7 @@ $('.save-name').live('click',function(){
 	if ( $(this).parent().parent().attr('data-id')!= '' ){
 		$.ajax({
 		  	type: 'POST',
-		  	url: '/admin/editType?id=' + id + '&name=name' + course
+		  	url: '/admin/editType?id=' + id + '&name=' + course
 		});	
 	}
 	else{
