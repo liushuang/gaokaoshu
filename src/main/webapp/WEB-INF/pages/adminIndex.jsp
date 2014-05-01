@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LiuShuang
@@ -15,7 +16,7 @@
 <body>
     <div class="nav">
         <a href="/admin/adminIndex">首页</a>
-        <a href="">列表页</a>
+        <a href="/admin/adminType">列表页</a>
     </div>
     <div class="contanier clearfix">
         <div class="clearfix backstage">
@@ -42,23 +43,54 @@
         <div class="clearfix backstage course-info">
             <h3>学科信息</h3>
             <div class="course-content">
+                <c:forEach items="${firstHotTypeList}" var="type" begin="0" end="8">
+                    <div class="course-main clearfix">
+                        <label>重点学科：</label>
+                        <form action="/admin/index/updateHotType" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="${type.id}" />
+                            <input type="file" name="img" style="display:none" />
+                            <label>链接：</label><input name="link" class="form-control course-id" type="text" value="${type.link}" />
+                            <label>学科名：</label><input name="title" class="form-control course-title" type="text" value="${type.title}"/>
+                            <button class="btn btn-lg btn-success btn-block" type="submit">保存</button>
+                        </form>
+                    </div>
+                </c:forEach>
                 <div class="course-main clearfix">
-                    <label>重点学科：</label>
-                    <input class="form-control course-id" type="text" placeholder="学科ID" /> 
-                    <input class="form-control course-title" type="text" placeholder="学科名"/>            
+                    <label>新增专业：</label>
+                    <form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="level" value="1" />
+                        <input type="file" name="img" style="display:none" />
+                        <label>链接：</label><input name="link" class="form-control course-id" type="text" placeholder="学科ID" />
+                        <label>学科名：</label><input name="title" class="form-control course-title" type="text" placeholder="学科名"/>
+                        <button class="btn btn-lg btn-success btn-block" type="submit">保存</button>
+                    </form>
                 </div>
             </div>
-            <button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
-            <button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
+
         </div>
         <div class="clearfix backstage course-info">
             <h3>轮播图</h3>
             <ul class="course-img">
+                <c:forEach items="${secondHotTypeList}" var="type" >
+                    <li>
+                        <label>图片和文字:</label>
+                        <i>×</i>
+                        <form action="/admin/index/updateHotType" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="level" value="2" />
+                            <input type="hidden" name="id" value="${type.id}" />
+                            链接：<input type="text" name="link" value="${type.link}" />
+                            标题：<input type="text" name="title" value=" ${type.title}" />
+                            描述：<input type="text" name="desc" value="${type.description}" />
+                            <input type="file" name="img" />
+                            <button type="submit" class="btn btn-lg btn-success btn-block">保存</button>
+                        </form>
+                    </li>
+                </c:forEach>
                 <li>
-                    <label>图片和文字:</label>
+                    <label>新增首页轮播图:</label>
                     <i>×</i>
                     <form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="level" value="1" />
+                        <input type="hidden" name="level" value="2" />
                         <input type="text" name="link" placeholder="链接" />
                         <input type="text" name="title" placeholder="标题" />
                         <input type="text" name="desc" placeholder="描述" />
@@ -67,15 +99,7 @@
                     </form>
                 </li>
             </ul>
-            <button class="btn btn-lg btn-primary btn-block img-add" type="submit">增加图片</button>
         </div>
-    </div>
-    <div class="add-btn clearfix" style="width:300px;">
-        <button class="btn btn-lg btn-success btn-block" type="submit" id="add-course">增加学科分类</button>
-        <button class="btn btn-lg btn-success btn-block" type="submit" id="save-course">保存</button>
-    </div>
-    <div class="add-btn clearfix" style="width:300px;margin:0 auto">
-        <button class="btn btn-lg btn-success btn-block" style="width:100%;" type="submit" id="save-course">保存</button>
     </div>
     <div class="will-delete">
         <div class="will-delete-content">

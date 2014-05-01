@@ -80,9 +80,9 @@ public class TypeDAO {
                 Query q = session.createQuery(sqlDeleteSecondType);
                 q.setInteger(0, existTypeEntity.getId());
                 q.executeUpdate();
-                session.delete(existTypeEntity);
-                session.getTransaction().commit();
             }
+            session.delete(existTypeEntity);
+            session.getTransaction().commit();
         }
         session.close();
     }

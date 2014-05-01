@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,11 +52,11 @@ public class AdminTypeController {
 
     @RequestMapping("/admin/addFirstType")
     public String addFirstType(ModelMap model, HttpSession session, String name) {
-        if(!AdminUtil.isAdmin(session)){
+        if (!AdminUtil.isAdmin(session)) {
             model.addAttribute("message", "只有管理员可以使用");
             return "error";
         }
-        if(StringUtils.isEmptyOrWhitespaceOnly(name) ){
+        if (StringUtils.isEmptyOrWhitespaceOnly(name)) {
             model.addAttribute("message", "名称不能为空");
             return "redirect:/admin/adminType";
         }
@@ -69,11 +70,11 @@ public class AdminTypeController {
 
     @RequestMapping("/admin/addSecondType")
     public String addSecondType(ModelMap model, HttpSession session, String name, int fid) {
-        if(!AdminUtil.isAdmin(session)){
+        if (!AdminUtil.isAdmin(session)) {
             model.addAttribute("message", "只有管理员可以使用");
             return "error";
         }
-        if(StringUtils.isEmptyOrWhitespaceOnly(name) || fid == 0){
+        if (StringUtils.isEmptyOrWhitespaceOnly(name) || fid == 0) {
             model.addAttribute("message", "格式错误");
             return "redirect:/admin/adminType";
         }
@@ -83,6 +84,16 @@ public class AdminTypeController {
         typeEntity.setLevel(2);
         typeEntity.setName(name);
         TypeDAO.insertTypeEntity(typeEntity);
+        return "redirect:/admin/adminType";
+    }
+
+    @RequestMapping("/admin/deleteType")
+    public String deleteType(ModelMap model, HttpSession session, int id) {
+        if (!AdminUtil.isAdmin(session)) {
+            model.addAttribute("message", "只有管理员可以使用");
+            return "error";
+        }
+        TypeDAO.deleteTypeEntity(id);
         return "redirect:/admin/adminType";
     }
 }
