@@ -11,6 +11,12 @@ body{
     margin-bottom: 15px;
     padding: 15px
 }
+.project-list{
+    display: none;
+}
+.active{
+    display: block;
+}
 .nav{
     position: fixed;
     left: 50%;
