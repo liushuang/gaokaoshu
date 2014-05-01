@@ -32,13 +32,23 @@ public class AdminBlogController {
         BlogEntity blogEntity = null;
         if (blogId != 0) {
             blogEntity = BlogDAO.getBlogByid(blogId);
-            model.addAttribute("typeId", blogEntity.getTypeId());
-            model.addAttribute("blogId", blogEntity.getId());
+            if (blogEntity != null) {
+                model.addAttribute("typeId", blogEntity.getTypeId());
+                model.addAttribute("blogId", blogEntity.getId());
+            } else {
+                model.addAttribute("typeId", typeId);
+                model.addAttribute("blogId", blogId);
+            }
         } else if (typeId != 0) {
             blogEntity = BlogDAO.getBlogByTypeId(typeId);
-            model.addAttribute("typeId", blogEntity.getTypeId());
-            model.addAttribute("blogId", blogEntity.getId());
-        } else{
+            if (blogEntity != null) {
+                model.addAttribute("typeId", blogEntity.getTypeId());
+                model.addAttribute("blogId", blogEntity.getId());
+            } else {
+                model.addAttribute("typeId", typeId);
+                model.addAttribute("blogId", blogId);
+            }
+        } else {
             model.addAttribute("typeId", typeId);
             model.addAttribute("blogId", blogId);
         }
@@ -76,7 +86,7 @@ public class AdminBlogController {
 
     @RequestMapping("/admin/editBlog")
     @ResponseBody
-    public String editBlog( HttpSession session, int blogId, String content) {
+    public String editBlog(HttpSession session, int blogId, String content) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
                 return "need login";
