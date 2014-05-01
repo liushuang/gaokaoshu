@@ -24,7 +24,7 @@ $('.course-img i').live('click',function(){
 	$('#is-delete').click(function(event) {
 		$(that).parent().remove();
 		$('.will-delete').hide();
-		var typeId = $(that).parent().find('input').eq(2).val();
+		var typeId = $(that).parent().find('input').eq(1).val();
 		$.ajax({
 		  	type: 'POST',
 		  	url: '/admin/index/deleteHotType?id='+typeId
