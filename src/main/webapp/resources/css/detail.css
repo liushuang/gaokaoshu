@@ -38,7 +38,7 @@
 .single-panel-body {
     border-top: 1px solid #E1E1E1;
     margin-top: 5px;
-    padding: 20px;
+    padding: 0 20px 20px;
 }
 .content{
     margin-top: 90px;
@@ -48,7 +48,12 @@
 .nav, .contact-us{
     top: 90px;
 }
-.single-panel-body h4 {
+.single-panel-body .blog-title{
     color: #F47056;
-    font-size: 18px;
+    font-size: 20px;
+    margin: 20px 0;
+}
+.single-panel-body p{
+    font-size: 16px;
+    margin: 5px 0;
 }

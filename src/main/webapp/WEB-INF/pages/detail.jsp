@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="/resources/css/detail.css">
 </head>
 <body>
-<input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
-<input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
+<input type="hidden" name="typeId" id="blog-typeid" value="${blog.typeId}" />
+<input type="hidden" name="blogId" id="blog-blogid" value="${blog.id}" />
 <div class="header ">
     <div class="header-box">
         <div class="logo">
