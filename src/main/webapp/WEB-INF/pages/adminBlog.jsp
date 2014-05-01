@@ -23,8 +23,11 @@
 <input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
 <input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
 <!--style给定宽度可以影响编辑器的最终宽度-->
-<div class="container">
-
+<div class="container blog-content">
+    <div class="clearfix text-title">
+        <label>标题：</label>
+        <input type="text" id="blog-title" class="form-control">
+    </div>
 </div>
 <div class="detail-btn">
     <button class="btn btn-lg btn-success btn-block" id="add-editor">增加小节</button>
