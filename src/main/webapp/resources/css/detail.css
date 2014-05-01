@@ -4,21 +4,51 @@
     padding: 20px;
     width: 160px;
 }
-
 .main-detail{
     float: left;
 }
-
 .detail-content {
     font-size: 14px;
     margin-left: 20px;
     padding: 20px;
     width: 620px;
 }
-
 .contact-fixed{
     float: right;
     padding: 20px;
     width: 220px;
     height: 190px;
+}
+.single-panel-inner {
+    background: none repeat scroll 0 0 #FBFBFB;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 0 3px #EEEEEE, 0 0 3px #FFFFFF inset;
+    padding: 20px;
+}
+.single-panel-header {
+    border-bottom: 3px solid #E1E1E1;
+    padding-bottom: 10px;
+    position: relative;
+}
+.single-panel-header h3 {
+    color: #D84C31;
+    font-size: 24px;
+    line-height: 40px;
+}
+.single-panel-body {
+    border-top: 1px solid #E1E1E1;
+    margin-top: 5px;
+    padding: 20px;
+}
+.content{
+    margin-top: 90px;
+    padding: 0 40px 0 0;
+    width: 680px;
+}
+.nav, .contact-us{
+    top: 90px;
+}
+.single-panel-body h4 {
+    color: #F47056;
+    font-size: 18px;
 }

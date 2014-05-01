@@ -15,6 +15,7 @@
       <div class="backstage">
         <div class="department">
           <a href="javascript:void(0)">自然科学</a>
+          <i>×</i>
           <div class="department-input">
             <input class="div-control input-small input-name" type="text" /> 
             <button class="btn btn-lg btn-success btn-block btn-small save-name" type="submit">保存</button> 
@@ -23,12 +24,7 @@
         <ul class="course clearfix">
           <li>
             <a href="" target="_blank">地质学</a>
-          </li>
-          <li>
-            <a href="" target="_blank">地质学</a>
-          </li>
-          <li>
-            <a href="" target="_blank">地质学</a>
+            <i>×</i>
           </li>
         </ul>
         <div class="add-btn clearfix">
@@ -40,6 +36,13 @@
     <div class="add-btn clearfix" style="width:300px;">
       <button class="btn btn-lg btn-success btn-block" type="submit" id="add-department">增加学科分类</button>
       <button class="btn btn-lg btn-success btn-block" type="submit" id="save-department">保存</button>
+    </div>
+    <div class="will-delete">
+        <div class="will-delete-content">
+            <p>确定删除吗，删除之后将无法恢复！</p>        
+            <button id="is-delete">确定</button>
+            <button id="no-delete">取消</button>
+        </div>
     </div>
     <script type="text/javascript" src="../js/jQuery.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>

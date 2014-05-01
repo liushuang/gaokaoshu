@@ -40,4 +40,12 @@ public class FileDAO {
         return c.list();
     }
 
+    public static UploadFileEntity getUploadFileEntityById(int id){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        UploadFileEntity uploadFileEntity = (UploadFileEntity) session.byId(UploadFileEntity.class).load(id);
+        session.getTransaction().commit();
+        session.close();
+        return uploadFileEntity;
+    }
 }
