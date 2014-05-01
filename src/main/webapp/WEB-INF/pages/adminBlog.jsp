@@ -22,17 +22,9 @@
 <body>
 <input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
 <input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
-<input type="hidden" name="content" id="blog-content" value="${blog.content}"/>
 <!--style给定宽度可以影响编辑器的最终宽度-->
 <div class="container">
-    <div class="text-area">
-        <div class="clearfix text-title">
-            <label>重点学科：</label>
-            <input type="text" class="form-control" id="input-title1">
-            <button class="btn btn-lg btn-primary btn-block delete-editor">删除小节</button>
-        </div>
-        <script type="text/plain" id="myEditor1" style="width:1000px;height:240px;"></script>
-    </div>
+
 </div>
 <div class="detail-btn">
     <button class="btn btn-lg btn-success btn-block" id="add-editor">增加小节</button>

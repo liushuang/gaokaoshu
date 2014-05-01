@@ -32,12 +32,18 @@ public class AdminBlogController {
         BlogEntity blogEntity = null;
         if (blogId != 0) {
             blogEntity = BlogDAO.getBlogByid(blogId);
+            model.addAttribute("typeId", blogEntity.getTypeId());
+            model.addAttribute("blogId", blogEntity.getId());
         } else if (typeId != 0) {
             blogEntity = BlogDAO.getBlogByTypeId(typeId);
+            model.addAttribute("typeId", blogEntity.getTypeId());
+            model.addAttribute("blogId", blogEntity.getId());
+        } else{
+            model.addAttribute("typeId", typeId);
+            model.addAttribute("blogId", blogId);
         }
         model.addAttribute("blog", blogEntity);
-        model.addAttribute("typeId", typeId);
-        model.addAttribute("blogId", blogId);
+
         return "adminBlog";
     }
 
@@ -69,11 +75,11 @@ public class AdminBlogController {
     }
 
     @RequestMapping("/admin/editBlog")
-    public String editBlog(ModelMap model, HttpSession session, int blogId, String content) {
+    @ResponseBody
+    public String editBlog( HttpSession session, int blogId, String content) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
-                model.addAttribute("message", "只有管理员可以使用");
-                return "error";
+                return "need login";
             }
         }
 
@@ -83,6 +89,6 @@ public class AdminBlogController {
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
             BlogDAO.updateBlogEntity(blogEntity);
         }
-        return "redirect:/admin/adminType";
+        return "success";
     }
 }
