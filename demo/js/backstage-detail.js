@@ -1,6 +1,6 @@
 var blogId = $('#blog-blogid').val(),
-	typeId = $('#blog-typeid').val(),
-	num = $('.text-area').length;
+	typeId = $('#blog-typeid').val();
+	
 $.ajax({
 	type: 'get',
 	url: '/admin/getBlogContent?blogId=' + blogId,
@@ -17,7 +17,9 @@ $.ajax({
 			$('#input-title'+i).val( contentAll.title[i-1] );
 		}
 	}
-})
+});
+
+var num = $('.text-area').length;
 
 $('#add-editor').click(function() {
     num ++;
@@ -42,6 +44,7 @@ $('#save-editor').click(function() {
 		'text' : arrText
 	};
 	var contentStr = JSON.stringify( contentJson );
+	console.log(contentJson);
 	console.log(contentStr);
 	if( blogId == 0 ){
 		$.ajax({
