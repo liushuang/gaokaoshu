@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <c:forEach items="${second_hot_list}" var="second_type" begin="0" end="8">
-                    <li class="row-first">
+                    <li>
                         <a class="" href="#">
                             ${second_type.description}
                             <!--<img src="${second_type.imgUrl}" />-->
