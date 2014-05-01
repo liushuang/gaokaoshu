@@ -59,7 +59,7 @@ public class AdminIndexInfoController {
     }
 
     @RequestMapping(value = "/admin/index/insertHotType",method = RequestMethod.POST)
-    public String insertHotType(ModelMap model ,HttpSession session, int typeId, @RequestParam MultipartFile img, int level, String desc) throws IOException {
+    public String insertHotType(ModelMap model ,HttpSession session, String title, @RequestParam MultipartFile img, int level, String desc, String link) throws IOException {
         if (!AdminUtil.isAdmin(session)) {
             model.addAttribute("message", "只有管理员可以进入");
             return "error";
@@ -82,8 +82,9 @@ public class AdminIndexInfoController {
         HotTypeEntity hotTypeEntity = new HotTypeEntity();
         hotTypeEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
         hotTypeEntity.setDescription(desc);
-        hotTypeEntity.setTypeId(typeId);
+        hotTypeEntity.setTitle(title);
         hotTypeEntity.setTypeLevel(level);
+        hotTypeEntity.setLink(link);
         hotTypeEntity.setImgUrl("/resources/images/" + localFileName);
 
         HotTypeDAO.insertHotTypeEntity(hotTypeEntity);

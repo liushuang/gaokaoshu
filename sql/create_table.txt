@@ -33,7 +33,7 @@ CREATE TABLE `upload_file` (
 CREATE TABLE `hot_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_level` int(11) DEFAULT NULL COMMENT '热门分类还是热门专业',
-  `type_id` int(11) DEFAULT NULL,
+  `title` varchar(256) DEFAULT NULL COMMENT '标题',
   `img_url` varchar(256) DEFAULT NULL COMMENT '图片链接',
   `description` varchar(256) DEFAULT NULL COMMENT '文字描述',
   `create_datetime` datetime DEFAULT NULL,

@@ -4,17 +4,18 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liushuang.ls on 14-4-30.
+ * Created by LiuShuang on 14-5-1.
  */
 @Entity
 @Table(name = "hot_type", schema = "", catalog = "gaokao_db")
 public class HotTypeEntity {
     private int id;
     private Integer typeLevel;
-    private Integer typeId;
+    private String title;
     private String imgUrl;
     private String description;
     private Timestamp createDatetime;
+    private String link;
 
     @Id
     @Column(name = "id")
@@ -37,13 +38,13 @@ public class HotTypeEntity {
     }
 
     @Basic
-    @Column(name = "type_id")
-    public Integer getTypeId() {
-        return typeId;
+    @Column(name = "title")
+    public String getTitle() {
+        return title;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Basic
@@ -76,6 +77,16 @@ public class HotTypeEntity {
         this.createDatetime = createDatetime;
     }
 
+    @Basic
+    @Column(name = "link")
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,7 +99,8 @@ public class HotTypeEntity {
             return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (imgUrl != null ? !imgUrl.equals(that.imgUrl) : that.imgUrl != null) return false;
-        if (typeId != null ? !typeId.equals(that.typeId) : that.typeId != null) return false;
+        if (link != null ? !link.equals(that.link) : that.link != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (typeLevel != null ? !typeLevel.equals(that.typeLevel) : that.typeLevel != null) return false;
 
         return true;
@@ -98,10 +110,11 @@ public class HotTypeEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (typeLevel != null ? typeLevel.hashCode() : 0);
-        result = 31 * result + (typeId != null ? typeId.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (imgUrl != null ? imgUrl.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (createDatetime != null ? createDatetime.hashCode() : 0);
+        result = 31 * result + (link != null ? link.hashCode() : 0);
         return result;
     }
 }

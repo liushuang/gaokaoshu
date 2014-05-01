@@ -8,7 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>后台管理首页</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.css">
+    <link rel="stylesheet" href="/resources/css/base.css">
 </head>
 <body>
 <div class="nav">
@@ -85,5 +87,8 @@
         <button type="submit" >保存</button>
     </form>
 </div>
+<script type="text/javascript" src="/resources/js/jQuery.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="/resources/js/backstage-index.js"></script>
 </body>
 </html>
