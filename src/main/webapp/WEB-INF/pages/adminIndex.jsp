@@ -60,6 +60,7 @@
                     <form action="/admin/index/insertHotType" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="level" value="1" />
                         <input type="text" name="link" placeholder="链接" />
+                        <input type="text" name="title" placeholder="标题" />
                         <input type="text" name="desc" placeholder="描述" />
                         <input type="file" name="img" />
                         <button type="submit" class="btn btn-lg btn-success btn-block">保存</button>
