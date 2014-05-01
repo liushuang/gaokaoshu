@@ -7,10 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 管理日志Controller
@@ -33,25 +36,36 @@ public class AdminBlogController {
             blogEntity = BlogDAO.getBlogByTypeId(typeId);
         }
         model.addAttribute("blog", blogEntity);
-        model.addAttribute("typeId",typeId);
-        model.addAttribute("blogId",blogId);
+        model.addAttribute("typeId", typeId);
+        model.addAttribute("blogId", blogId);
         return "adminBlog";
     }
 
     @RequestMapping("/admin/addBlog")
-    public String addBlog(ModelMap model, HttpSession session, int typeId, String content) {
+    @ResponseBody
+    public String addBlog(HttpSession session, int typeId, String content) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
-                model.addAttribute("message", "只有管理员可以使用");
-                return "error";
+                return "need login";
             }
+        } else {
+            BlogEntity blogEntity = new BlogEntity();
+            blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
+            blogEntity.setContent(content);
+            blogEntity.setTypeId(typeId);
+            BlogDAO.insertBlogEntity(blogEntity);
         }
-        BlogEntity blogEntity = new BlogEntity();
-        blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
-        blogEntity.setContent(content);
-        blogEntity.setTypeId(typeId);
-        BlogDAO.insertBlogEntity(blogEntity);
-        return "redirect:/admin/adminType";
+        return "success";
+    }
+
+    @RequestMapping("/admin/getBlogContent")
+    @ResponseBody
+    public String getContentByBlogId(int blogId) {
+        BlogEntity blogEntity = BlogDAO.getBlogByid(blogId);
+        if (blogEntity != null) {
+            return blogEntity.getContent();
+        }
+        return "";
     }
 
     @RequestMapping("/admin/editBlog")
