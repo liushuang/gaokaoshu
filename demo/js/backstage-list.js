@@ -15,11 +15,11 @@ $('.course i').live('click',function(){
 	$('.will-delete').show();
 	$('#is-delete').click(function(event) {
 		$(that).parent().remove();
-		var coursename = $(that).parent().find('a').text();
+		var courseId = $(that).parent().find('a').attr('data-id');
 		$('.will-delete').hide();
 		$.ajax({
 		  	type: 'POST',
-		  	url: '/admin/deleteType?id=' + coursename
+		  	url: '/admin/deleteType?id=' + courseId
 		});
 	});
 	$('#no-delete').click(function(event) {
@@ -32,11 +32,11 @@ $('.department i').live('click',function(){
 	$('.will-delete').show();
 	$('#is-delete').click(function(event) {
 		$(that).parent().parent().remove();
-		var coursename = $(that).parent().find('a').text();
+		var courseId = $(that).parent().find('a').attr('data-id');
 		$('.will-delete').hide();
 		$.ajax({
 		  	type: 'POST',
-		  	url: '/admin/deleteType?id=' + coursename
+		  	url: '/admin/deleteType?id=' + courseId
 		});
 	});
 	$('#no-delete').click(function(event) {
@@ -45,10 +45,11 @@ $('.department i').live('click',function(){
 })
 
 $('.save-coursename').live('click',function(){
-	var coursename = $(this).parent().find('.input-coursename').val();
+	var courseName = $(this).parent().find('.input-coursename').val()
+		cousrseId = $(this).parent().parent().parent().parent().find('.department a').attr('data-id');
 	$.ajax({
 	  	type: 'POST',
-	  	url: '/admin/addSecondType?name=' + coursename + '&fid=f_id'
+	  	url: '/admin/addSecondType?name=' + courseName + '&fid=f_id' + cousrseId
 	});	
 })
 
