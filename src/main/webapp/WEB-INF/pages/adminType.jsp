@@ -25,10 +25,12 @@
         <div class="department">
             <a href="javascript:void(0)" data-id="${item.typeEntity.id}">${item.typeEntity.name}</a>
             <i>×</i>
-
             <div class="department-input">
-                <input class="div-control input-small input-name" type="text"/>
-                <button class="btn btn-lg btn-success btn-block btn-small save-name" type="submit">保存</button>
+                <form name="department-name" action="/admin/editType" method="post">
+                  <input type="hidden" name="id" value="${item.typeEntity.id}"/> 
+                  <input class="div-control input-small input-name" type="text" name="name" /> 
+                  <button class="btn btn-lg btn-success btn-block btn-small save-name" type="submit">保存</button> 
+                </form>
             </div>
         </div>
         <ul class="course clearfix">
