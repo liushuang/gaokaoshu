@@ -1,3 +1,5 @@
+$('.carousel-indicators li').eq(0).addClass('active');
+$('.carousel-inner').find('.item').eq(0).addClass('active');
 /*!
  * Bootstrap v3.0.3 (http://getbootstrap.com)
  * Copyright 2013 Twitter, Inc.
