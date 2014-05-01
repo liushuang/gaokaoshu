@@ -144,7 +144,7 @@ h3{
 .course li, .course-img li{
 	position: relative;
 }
-.course li i, .course-img li i {
+.course li i, .course-img li i, .department i {
     background-color: #ccc;
     border-radius: 3px;
     color: #fff;
@@ -158,4 +158,12 @@ h3{
     text-align: center;
     top: 2px;
     width: 18px;
+}
+.course li i{
+	right: 7px;
+	top: 5px;
+}
+.department i{
+	right: 7px;
+	top: 7px;
 }

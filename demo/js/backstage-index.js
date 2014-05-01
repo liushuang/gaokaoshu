@@ -27,7 +27,7 @@ $('#save-course').click(function() {
 			textimgLink = $('.course-img li').eq(i).find('.textimg-link').val();
 		$.ajax({
 		  	type: 'POST',
-		  	url: /admin/index/insertHotType?level=2&typeId=type_id&desc=desc&img=img(type_id:学科id,img:展示图片)
+		  	url: '/admin/index/insertHotType?level=2&typeId=type_id&desc=desc&img=img'
 		});
 	}
 });

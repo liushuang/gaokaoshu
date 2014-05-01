@@ -27,6 +27,23 @@ $('.course i').live('click',function(){
 	});
 })
 
+$('.department i').live('click',function(){
+	var that = this;
+	$('.will-delete').show();
+	$('#is-delete').click(function(event) {
+		$(that).parent().parent().remove();
+		var coursename = $(that).parent().find('a').text();
+		$('.will-delete').hide();
+		$.ajax({
+		  	type: 'POST',
+		  	url: '/admin/deleteType?id='+coursename
+		});
+	});
+	$('#no-delete').click(function(event) {
+		$('.will-delete').hide();
+	});
+})
+
 $('.save-coursename').live('click',function(){
 	var coursename = $(this).parent().find('.input-coursename').val();
 	$.ajax({
