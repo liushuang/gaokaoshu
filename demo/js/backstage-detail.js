@@ -39,17 +39,18 @@ $('#save-editor').click(function() {
 		'title' : arrTitle,
 		'text' : arrText
 	};
-	console.log(contentJson);
+	var contentStr = JSON.stringify( contentJson );
+	console.log(contentStr);
 	if( blogId == 0 ){
 		$.ajax({
 			type: 'post',
-			url: '/admin/addBlog?typeId=' + typeId + '&content=' + contentJson
+			url: '/admin/addBlog?typeId=' + typeId + '&content=' + contentStr
 		})
 	}
 	else{
 		$.ajax({
 			type: 'post',
-			url: '/admin/editBlog?blogId=' + blogId + '&content=' + contentJson
+			url: '/admin/editBlog?blogId=' + blogId + '&content=' + contentStr
 		})
 	};
 });
