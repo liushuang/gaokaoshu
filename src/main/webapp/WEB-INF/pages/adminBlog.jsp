@@ -20,9 +20,9 @@
     <script type="text/javascript" src="/resources/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
-<input type="hidden" name="typeId" value="${typeId}" />
-<input type="hidden" name="blogId" value="${blogId}" />
-<input type="hidden" name="content" value="${blog.content}"/>
+<input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
+<input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
+<input type="hidden" name="content" id="blog-content" value="${blog.content}"/>
 <!--style给定宽度可以影响编辑器的最终宽度-->
 <div class="container">
     <div class="text-area">
@@ -31,7 +31,7 @@
             <input type="text" class="form-control" id="input-title1">
             <button class="btn btn-lg btn-primary btn-block delete-editor">删除小节</button>
         </div>
-        <script type="text/plain" id="myEditor1" style="width:1000px;height:240px;">请输入内容</script>
+        <script type="text/plain" id="myEditor1" style="width:1000px;height:240px;"></script>
     </div>
 </div>
 <div class="detail-btn">
