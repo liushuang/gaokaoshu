@@ -6,8 +6,16 @@ UM.getEditor('myEditor1');
 //     arr.push(UM.getEditor('myEditor1').getContent());
 //     alert(arr);
 // }
-
-var num = $('.text-area').length;
+var blogId = $('#blog-blogid').val(),
+	typeId = $('#blog-typeid').val(),
+	num = $('.text-area').length;
+$.ajax({
+	type: 'get',
+	url: '/admin/getBlogContent?blogId=' + blogId,
+	success:function(data){
+		console.log(data);
+	}
+})
 
 $('#add-editor').click(function() {
     num ++;
@@ -21,12 +29,29 @@ $('#save-editor').click(function() {
 	for( var i = 1; i <= num; i++){	
     	var idName = 'myEditor' + i;    
 	    arrText.push( UM.getEditor(idName).getContent() );
-	}
+	};
 	var arrTitle = [];	
 	for( var j = 1; j <= num; j++){	
     	var inputName = 'input-title' + j;    
 	    arrTitle.push( $('#input-title'+j).val() );
+	};
+	var contentJson = {
+		'title' : arrTitle,
+		'text' : arrText
+	};
+	console.log(contentJson);
+	if( blogId == 0 ){
+		$.ajax({
+			type: 'post',
+			url: '/admin/addBlog?typeId=' + typeId + '&content=' + contentJson
+		})
 	}
+	else{
+		$.ajax({
+			type: 'post',
+			url: '/admin/editBlog?blogId=' + blogId + '&content=' + contentJson
+		})
+	};
 });
 
 $('.delete-editor').live('click',function(){
@@ -39,4 +64,7 @@ $('.delete-editor').live('click',function(){
 	$('#no-delete').click(function(event) {
 		$('.will-delete').hide();
 	});
-})
+});
+
+$('#myEditor1').text('');
+$('#myEditor1').append('<p>123123123</p>')

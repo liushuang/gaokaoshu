@@ -45,7 +45,6 @@
         <button id="no-delete">取消</button>
     </div>
 </div>
-<script type="text/javascript" src="/resources/js/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/js/backstage-detail.js"></script>
 </body>
 </html>
