@@ -53,4 +53,26 @@ public class HotTypeDAO {
         c.add(Restrictions.eq("typeLevel", level));
         return c.list();
     }
+
+    /**
+     * 根据id获取热门专业
+     * @param id
+     * @return
+     */
+    public static HotTypeEntity getHotTypeById(int id){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        HotTypeEntity hotTypeEntity = (HotTypeEntity) session.byId(HotTypeEntity.class).load(id);
+        session.getTransaction().commit();
+        session.close();
+        return hotTypeEntity;
+    }
+
+    public static void updateHotType(HotTypeEntity hotTypeEntity){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(hotTypeEntity);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

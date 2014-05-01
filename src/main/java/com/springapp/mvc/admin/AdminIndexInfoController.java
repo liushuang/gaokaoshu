@@ -47,57 +47,95 @@ public class AdminIndexInfoController {
         }
         BasicInfoEntity webIntro = BasicInfoDAO.getBasicInfoById(Constant.BASIC_INFO_WEB_INTRODUCTION);
         BasicInfoEntity baokaogaishu = BasicInfoDAO.getBasicInfoById(Constant.BASIC_INFO_BAOKAOGAISHU);
-        model.addAttribute("wangzhanshuoming",webIntro.getText());
-        model.addAttribute("baokaogaishu",baokaogaishu.getText());
+        model.addAttribute("wangzhanshuoming", webIntro.getText());
+        model.addAttribute("baokaogaishu", baokaogaishu.getText());
 
         List<HotTypeEntity> firstHotTypeList = HotTypeDAO.getHotTypeListByLevel(1);
         List<HotTypeEntity> secondHotTypeList = HotTypeDAO.getHotTypeListByLevel(2);
-        model.addAttribute("firstHotTypeList",firstHotTypeList);
-        model.addAttribute("secondHotTypeList",secondHotTypeList);
+        model.addAttribute("firstHotTypeList", firstHotTypeList);
+        model.addAttribute("secondHotTypeList", secondHotTypeList);
 
         return "adminIndex";
     }
 
-    @RequestMapping(value = "/admin/index/insertHotType",method = RequestMethod.POST)
-    public String insertHotType(ModelMap model ,HttpSession session, String title, @RequestParam MultipartFile img, int level, String desc, String link) throws IOException {
+    @RequestMapping(value = "/admin/index/insertHotType", method = RequestMethod.POST)
+    public String insertHotType(ModelMap model, HttpSession session, String title, @RequestParam MultipartFile img, int level, String desc, String link) throws IOException {
         if (!AdminUtil.isAdmin(session)) {
             model.addAttribute("message", "只有管理员可以进入");
             return "error";
         }
-        String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
-        File dir = new File(filePath);
-        if(!dir.exists()){
-            dir.mkdir();
-        }
-        String originalFileName = img.getOriginalFilename();
-        String localFileName ;
-        if(originalFileName.indexOf(".") != -1){
-            int separator = originalFileName.lastIndexOf(".");
-            localFileName = originalFileName.substring(0,separator) + System.currentTimeMillis() + originalFileName.substring(separator);
-        }else{
-            localFileName = originalFileName + System.currentTimeMillis();
-        }
-        File localFile = new File(filePath + localFileName);
-        img.transferTo(localFile);
+
         HotTypeEntity hotTypeEntity = new HotTypeEntity();
         hotTypeEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
         hotTypeEntity.setDescription(desc);
         hotTypeEntity.setTitle(title);
         hotTypeEntity.setTypeLevel(level);
         hotTypeEntity.setLink(link);
-        hotTypeEntity.setImgUrl("/resources/images/" + localFileName);
+
+        if (level == 2) {
+            String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
+            File dir = new File(filePath);
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            String originalFileName = img.getOriginalFilename();
+            String localFileName;
+            if (originalFileName.indexOf(".") != -1) {
+                int separator = originalFileName.lastIndexOf(".");
+                localFileName = originalFileName.substring(0, separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+            } else {
+                localFileName = originalFileName + System.currentTimeMillis();
+            }
+            File localFile = new File(filePath + localFileName);
+            img.transferTo(localFile);
+            hotTypeEntity.setImgUrl("/resources/images/" + localFileName);
+        }
 
         HotTypeDAO.insertHotTypeEntity(hotTypeEntity);
         return "redirect:/admin/adminIndex";
     }
 
     @RequestMapping("/admin/index/deleteHotType")
-    public String deleteHotType(ModelMap model ,HttpSession session, int id){
+    public String deleteHotType(ModelMap model, HttpSession session, int id) {
         if (!AdminUtil.isAdmin(session)) {
             model.addAttribute("message", "只有管理员可以进入");
             return "error";
         }
         HotTypeDAO.deleteHotType(id);
+        return "redirect:/admin/adminIndex";
+    }
+
+    @RequestMapping(value = "/admin/index/updateHotType", method = RequestMethod.POST)
+    public String updateHotType(ModelMap model, HttpSession session, String title, @RequestParam MultipartFile img, int id, String desc, String link) throws IOException {
+        if (!AdminUtil.isAdmin(session)) {
+            model.addAttribute("message", "只有管理员可以进入");
+            return "error";
+        }
+        HotTypeEntity hotTypeEntity = HotTypeDAO.getHotTypeById(id);
+        hotTypeEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
+        hotTypeEntity.setDescription(desc);
+        hotTypeEntity.setTitle(title);
+        hotTypeEntity.setLink(link);
+
+        if (hotTypeEntity.getTypeLevel() == 2) {
+            String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
+            File dir = new File(filePath);
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            String originalFileName = img.getOriginalFilename();
+            String localFileName;
+            if (originalFileName.indexOf(".") != -1) {
+                int separator = originalFileName.lastIndexOf(".");
+                localFileName = originalFileName.substring(0, separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+            } else {
+                localFileName = originalFileName + System.currentTimeMillis();
+            }
+            File localFile = new File(filePath + localFileName);
+            img.transferTo(localFile);
+            hotTypeEntity.setImgUrl("/resources/images/" + localFileName);
+        }
+        HotTypeDAO.updateHotType(hotTypeEntity);
         return "redirect:/admin/adminIndex";
     }
 }

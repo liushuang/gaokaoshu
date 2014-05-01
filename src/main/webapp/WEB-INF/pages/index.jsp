@@ -29,29 +29,28 @@
                         热门学科
                     </a>
                 </li>
-                <c:forEach items="${second_hot_list}" var="second_type" begin="0" end="8">
+                <c:forEach items="${first_hot_list}" var="type" begin="0" end="8">
                     <li>
-                        <a class="" href="#">
-                            ${second_type.description}
-                            <!--<img src="${second_type.imgUrl}" />-->
+                        <a class="" href="${type.link}" target="_blank">
+                            ${type.title}
                         </a>
                     </li>
                 </c:forEach>
             </ul>
         </div>
-        <div class="carousel slide" id="myCarousel">
+        <div class="carousel slide" id="myCarousel" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li class="" data-slide-to="0" data-target="#myCarousel"></li>
-                <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
-                <li data-slide-to="2" data-target="#myCarousel"></li>
+                <c:forEach items="${second_hot_list}" var="type" begin="0" end="3" varStatus="status">
+                    <li data-slide-to="${status.index}" data-target="#myCarousel"></li>
+                </c:forEach>
             </ol>
             <div class="carousel-inner">
-                <c:forEach items="${first_hot_list}" var="first_type" begin="0" end="3">
+                <c:forEach items="${second_hot_list}" var="type" begin="0" end="3">
                     <div class="item">
-                        <img alt="" src="${first_type.imgUrl}">
+                        <img alt="" src="${type.imgUrl}">
                         <div class="carousel-caption">
-                            <h3>First  label</h3>
-                            <p>${first_type.description}</p>
+                            <h3>${type.title}</h3>
+                            <p>${type.description}</p>
                         </div>
                     </div>
                 </c:forEach>
