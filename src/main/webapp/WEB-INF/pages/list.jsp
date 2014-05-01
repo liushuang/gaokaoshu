@@ -22,7 +22,7 @@
         </div>
         <div class="main-nav">
             <ul>
-                <li ><a href="/">首页</a></li>
+                <li><a href="/">首页</a></li>
                 <li class="home-select nav-select"><a href="/list">列表页</a></li>
                 <li><a href="">联系我们</a></li>
             </ul>
@@ -30,28 +30,31 @@
     </div>
 </div>
 <h2>学科列表</h2>
+
 <div class="content">
     <ul class="nav nav-tabs">
         <c:forEach items="${type_list}" var="first_type" varStatus="idx">
-            <li class="active"><a href="#"> ${first_type.typeEntity.name}</a></li>
+            <li><a href="#"> ${first_type.typeEntity.name}</a></li>
         </c:forEach>
     </ul>
-    <div class="project-list">
-        <c:forEach items="${type_list}" var="type">
+    <c:forEach items="${type_list}" var="type">
+        <div class="project-list">
             <ul>
                 <c:forEach items="${type.childList}" var="second_type">
                     <li>
-                        <a>${second_type.name}</a>
+                        <a href="/type/${second_type.id}">${second_type.name}</a>
                     </li>
                 </c:forEach>
             </ul>
-        </c:forEach>
-    </div>
+        </div>
+    </c:forEach>
     <div class="contact-us">
         <h3>联系方式</h3>
+
         <p></p>
     </div>
 </div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <script type="text/javascript" src="/resources/js/jQuery.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="/resources/js/list.js"></script>

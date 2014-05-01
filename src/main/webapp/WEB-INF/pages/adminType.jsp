@@ -36,7 +36,7 @@
         <ul class="course clearfix">
             <c:forEach items="${item.childList}" var="child_type">
                 <li>
-                    <a href="/type/${child_type.id}" target="_blank" data-id="${child_type.id}">${child_type.name}</a>
+                    <a href="/admin/adminBlog?typeId=${child_type.id}" target="_blank" data-id="${child_type.id}">${child_type.name}</a>
                     <i>×</i>
                 </li>
             </c:forEach>
@@ -49,7 +49,6 @@
 </div>
 <div class="add-btn clearfix" style="width:300px;">
     <button class="btn btn-lg btn-success btn-block" type="submit" id="add-department">增加学科分类</button>
-    <button class="btn btn-lg btn-success btn-block" type="submit" id="save-department">保存</button>
 </div>
 <div class="will-delete">
     <div class="will-delete-content">
