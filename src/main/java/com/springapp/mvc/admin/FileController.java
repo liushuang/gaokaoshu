@@ -37,7 +37,7 @@ public class FileController {
     }
 
     @RequestMapping(value = "/admin/upload", method = RequestMethod.POST)
-    public String processUpload(@RequestParam MultipartFile file, Model model, HttpSession session, int blogId) throws IOException {
+    public String processUpload(@RequestParam MultipartFile file, Model model, HttpSession session, int blogId, int typeId) throws IOException {
         String filePath = session.getServletContext().getRealPath("/") + "/upload/";
         File dir = new File(filePath);
         if(!dir.exists()){
@@ -55,6 +55,7 @@ public class FileController {
         UploadFileEntity uploadFileEntity = new UploadFileEntity();
         uploadFileEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
         uploadFileEntity.setBlogId(blogId);
+        uploadFileEntity.setTypeId(typeId);
         uploadFileEntity.setFileName(localFile.getName());
         uploadFileEntity.setOriginalName(file.getOriginalFilename());
         uploadFileEntity.setFilePath(localFile.getAbsolutePath());

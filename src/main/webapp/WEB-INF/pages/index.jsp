@@ -65,17 +65,18 @@
         </div>
         <div class="web-info ">
             <h4>网站说明</h4>
-            <p>${web_introduction.text}</p>
+            <p><a href="/type/10">${web_introduction.text}</a></p>
         </div>
         <div class="web-info ">
             <h4>报考概述</h4>
-            <p>${baokaogaishu.text}</p>
+            <p><a href="/type/11">${baokaogaishu.text}</a></p>
         </div>
         <div class="web-info ">
             <h4>联系方式</h4>
             <p>网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明</p>
         </div>
     </div>
+    <div>${view_count}</div>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
     <script type="text/javascript" src="/resources/js/jQuery.js"></script>
     <script type="text/javascript" src="/resources/js/bootstrap.js"></script>

@@ -16,6 +16,7 @@ public class ViewCountDAO {
         if(viewCountEntity == null){
             viewCountEntity = new ViewCountEntity();
             viewCountEntity.setId(id);
+            viewCountEntity.setCount(0);
         }
         viewCountEntity.setCount(viewCountEntity.getCount() + 1);
         session.saveOrUpdate(viewCountEntity);

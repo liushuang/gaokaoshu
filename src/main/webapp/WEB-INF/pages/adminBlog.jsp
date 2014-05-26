@@ -41,5 +41,11 @@
     </div>
 </div>
 <script type="text/javascript" src="/resources/js/backstage-detail.js"></script>
+<form action="/admin/upload" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="typeId" value="${typeId}">
+    <input type="hidden" name="blogId" value="${blogId}">
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+</form>
 </body>
 </html>

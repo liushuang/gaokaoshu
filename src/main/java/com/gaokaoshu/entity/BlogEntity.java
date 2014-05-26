@@ -16,6 +16,7 @@ public class BlogEntity {
     private Integer goodCount;
     private Integer middleCount;
     private Integer badCount;
+    private String authorName;
 
     @Id
     @Column(name = "id")
@@ -87,6 +88,16 @@ public class BlogEntity {
         this.badCount = badCount;
     }
 
+    @Basic
+    @Column(name = "author_name")
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,6 +106,7 @@ public class BlogEntity {
         BlogEntity that = (BlogEntity) o;
 
         if (id != that.id) return false;
+        if (authorName != null ? !authorName.equals(that.authorName) : that.authorName != null) return false;
         if (badCount != null ? !badCount.equals(that.badCount) : that.badCount != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
         if (createDatetime != null ? !createDatetime.equals(that.createDatetime) : that.createDatetime != null)
@@ -115,6 +127,7 @@ public class BlogEntity {
         result = 31 * result + (goodCount != null ? goodCount.hashCode() : 0);
         result = 31 * result + (middleCount != null ? middleCount.hashCode() : 0);
         result = 31 * result + (badCount != null ? badCount.hashCode() : 0);
+        result = 31 * result + (authorName != null ? authorName.hashCode() : 0);
         return result;
     }
 }

@@ -35,6 +35,7 @@ public class AdminBlogController {
             if (blogEntity != null) {
                 model.addAttribute("typeId", blogEntity.getTypeId());
                 model.addAttribute("blogId", blogEntity.getId());
+                model.addAttribute("authorName", blogEntity.getAuthorName());
             } else {
                 model.addAttribute("typeId", typeId);
                 model.addAttribute("blogId", blogId);
@@ -44,6 +45,7 @@ public class AdminBlogController {
             if (blogEntity != null) {
                 model.addAttribute("typeId", blogEntity.getTypeId());
                 model.addAttribute("blogId", blogEntity.getId());
+                model.addAttribute("authorName", blogEntity.getAuthorName());
             } else {
                 model.addAttribute("typeId", typeId);
                 model.addAttribute("blogId", blogId);
@@ -59,7 +61,7 @@ public class AdminBlogController {
 
     @RequestMapping("/admin/addBlog")
     @ResponseBody
-    public String addBlog(HttpSession session, int typeId, String content) {
+    public String addBlog(HttpSession session, int typeId, String content, String authorName) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
                 return "need login";
@@ -69,6 +71,7 @@ public class AdminBlogController {
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
             blogEntity.setContent(content);
             blogEntity.setTypeId(typeId);
+            blogEntity.setAuthorName(authorName);
             BlogDAO.insertBlogEntity(blogEntity);
         }
         return "success";
@@ -86,7 +89,7 @@ public class AdminBlogController {
 
     @RequestMapping("/admin/editBlog")
     @ResponseBody
-    public String editBlog(HttpSession session, int blogId, String content) {
+    public String editBlog(HttpSession session, int blogId, String content, String authorName) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
                 return "need login";
@@ -97,6 +100,7 @@ public class AdminBlogController {
         if (blogEntity != null) {
             blogEntity.setContent(content);
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
+            blogEntity.setAuthorName(authorName);
             BlogDAO.updateBlogEntity(blogEntity);
         }
         return "success";
