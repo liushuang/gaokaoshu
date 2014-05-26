@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liushuang.ls on 14-4-30.
+ * Created by liushuang on 26/5/14.
  */
 @Entity
 @Table(name = "blog", schema = "", catalog = "gaokao_db")
@@ -13,6 +13,9 @@ public class BlogEntity {
     private String content;
     private Integer typeId;
     private Timestamp createDatetime;
+    private Integer goodCount;
+    private Integer middleCount;
+    private Integer badCount;
 
     @Id
     @Column(name = "id")
@@ -54,6 +57,36 @@ public class BlogEntity {
         this.createDatetime = createDatetime;
     }
 
+    @Basic
+    @Column(name = "good_count")
+    public Integer getGoodCount() {
+        return goodCount;
+    }
+
+    public void setGoodCount(Integer goodCount) {
+        this.goodCount = goodCount;
+    }
+
+    @Basic
+    @Column(name = "middle_count")
+    public Integer getMiddleCount() {
+        return middleCount;
+    }
+
+    public void setMiddleCount(Integer middleCount) {
+        this.middleCount = middleCount;
+    }
+
+    @Basic
+    @Column(name = "bad_count")
+    public Integer getBadCount() {
+        return badCount;
+    }
+
+    public void setBadCount(Integer badCount) {
+        this.badCount = badCount;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,9 +95,12 @@ public class BlogEntity {
         BlogEntity that = (BlogEntity) o;
 
         if (id != that.id) return false;
+        if (badCount != null ? !badCount.equals(that.badCount) : that.badCount != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
         if (createDatetime != null ? !createDatetime.equals(that.createDatetime) : that.createDatetime != null)
             return false;
+        if (goodCount != null ? !goodCount.equals(that.goodCount) : that.goodCount != null) return false;
+        if (middleCount != null ? !middleCount.equals(that.middleCount) : that.middleCount != null) return false;
         if (typeId != null ? !typeId.equals(that.typeId) : that.typeId != null) return false;
 
         return true;
@@ -76,6 +112,9 @@ public class BlogEntity {
         result = 31 * result + (content != null ? content.hashCode() : 0);
         result = 31 * result + (typeId != null ? typeId.hashCode() : 0);
         result = 31 * result + (createDatetime != null ? createDatetime.hashCode() : 0);
+        result = 31 * result + (goodCount != null ? goodCount.hashCode() : 0);
+        result = 31 * result + (middleCount != null ? middleCount.hashCode() : 0);
+        result = 31 * result + (badCount != null ? badCount.hashCode() : 0);
         return result;
     }
 }
