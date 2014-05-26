@@ -2,6 +2,7 @@ package com.springapp.mvc;
 
 import com.gaokaoshu.dao.BlogDAO;
 import com.gaokaoshu.dao.TypeDAO;
+import com.gaokaoshu.dao.ViewCountDAO;
 import com.gaokaoshu.entity.BlogEntity;
 import com.gaokaoshu.entity.TypeEntity;
 import org.springframework.stereotype.Controller;
@@ -34,8 +35,10 @@ public class DetailController {
             return "error";
         }
         TypeEntity typeEntity = TypeDAO.getTypeById(blogEntity.getTypeId());
+        int viewCount = ViewCountDAO.increaseViewCount(id);
         model.addAttribute("blog", blogEntity);
         model.addAttribute("type", typeEntity);
+        model.addAttribute("viewCount",viewCount);
         return "detail";
     }
 }

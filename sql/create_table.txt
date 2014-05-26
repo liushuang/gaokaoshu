@@ -37,6 +37,7 @@ CREATE TABLE `hot_type` (
   `img_url` varchar(256) DEFAULT NULL COMMENT 'Í¼Æ¬Á´½Ó',
   `description` varchar(256) DEFAULT NULL COMMENT 'ÎÄ×ÖÃèÊö',
   `create_datetime` datetime DEFAULT NULL,
+  `link` varchar(512) DEFAULT NULL COMMENT ¡¯Ìø×ªÁ´½Ó¡¯,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
@@ -48,10 +49,3 @@ CREATE TABLE `type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `blog` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text,
-  `type_id` int(11) DEFAULT NULL,
-  `create_datetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
