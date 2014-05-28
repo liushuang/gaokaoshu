@@ -24,13 +24,13 @@
         <div class="row-fluid">
             <ul>
                 <li class="row-first">
-                    <a class="" href="javascript:void(0)">
+                    <a href="javascript:void(0)">
                         热门学科
                     </a>
                 </li>
                 <c:forEach items="${first_hot_list}" var="type" begin="0" end="8">
                     <li>
-                        <a class="" href="${type.link}" target="_blank">
+                        <a href="${type.link}" target="_blank">
                             ${type.title}
                         </a>
                     </li>
@@ -45,8 +45,8 @@
             </ol>
             <div class="carousel-inner">
                 <c:forEach items="${second_hot_list}" var="type" begin="0" end="3">
-                    <div class="item">
-                        <img alt="" src="${type.imgUrl}">
+                    <div class="item">                        
+                        <a href="${type.link}" target="_blank"><img alt="" src="${type.imgUrl}"></a>
                         <div class="carousel-caption">
                             <h3>${type.title}</h3>
                             <p>${type.description}</p>
@@ -64,15 +64,15 @@
         </div>
         <div class="web-info ">
             <h4>网站说明</h4>
-            <p><a href="/type/10">${web_introduction.text}</a></p>
+            <p>${web_introduction.text}<a href="/type/10">更多>></a></p>
         </div>
         <div class="web-info ">
             <h4>报考概述</h4>
-            <p><a href="/type/11">${baokaogaishu.text}</a></p>
+            <p>${baokaogaishu.text}<a href="/type/11">更多>></a></p>
         </div>
         <div class="web-info ">
             <h4>联系方式</h4>
-            <p>网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明</p>
+            <p>网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明<a href="">更多>></a></p>
         </div>
     </div>
     <div>${view_count}</div>

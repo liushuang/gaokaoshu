@@ -8,6 +8,8 @@ $.ajax({
 		var contentAll = eval('(' + data + ')'); 
 		var index = contentAll.text.length;
 		$('.single-panel-header h3').text(contentAll.blogtitle);
+		$('.single-panel-header span').eq(0).text(contentAll.author);
+		$('.single-panel-header span').eq(1).text(contentAll.time);
 		for( var i = 0; i < index; i ++ ){
 			$('.single-panel-body').append( '<h4 class="blog-title" id="blog-title' + i + '">' + contentAll.title[i] + '</h4>' +  contentAll.text[i]);
 			$('.nav').append( '<li><a href="javascript:void(0)" data-local="' + i + '">' + contentAll.title[i] + '</a></li>');
