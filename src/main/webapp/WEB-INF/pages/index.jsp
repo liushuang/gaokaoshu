@@ -6,7 +6,6 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
 <body>
-    ${view_count}
     <div class="header ">
         <div class="header-box">
             <div class="logo">
