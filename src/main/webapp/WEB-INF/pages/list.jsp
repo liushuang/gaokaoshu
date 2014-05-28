@@ -34,7 +34,7 @@
 <div class="content">
     <ul class="nav nav-tabs">
         <c:forEach items="${type_list}" var="first_type" varStatus="idx">
-            <li><a href="#"> ${first_type.typeEntity.name}</a></li>
+            <li><a href="javascript:void(0)"> ${first_type.typeEntity.name}</a></li>
         </c:forEach>
     </ul>
     <c:forEach items="${type_list}" var="type">
