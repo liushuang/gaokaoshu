@@ -1,8 +1,11 @@
 package com.springapp.mvc.admin;
 
 import com.gaokaoshu.dao.BlogDAO;
+import com.gaokaoshu.dao.FileDAO;
 import com.gaokaoshu.entity.BlogEntity;
+import com.gaokaoshu.entity.UploadFileEntity;
 import com.gaokaoshu.util.AdminUtil;
+import org.apache.commons.io.monitor.FileEntry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,7 +57,8 @@ public class AdminBlogController {
             model.addAttribute("blogId", blogId);
         }
         model.addAttribute("blog", blogEntity);
-
+        List<UploadFileEntity> fileEntryList = FileDAO.getUploadFileEntityByTypeId(typeId);
+        model.addAttribute("fileList",fileEntryList);
         return "adminBlog";
     }
 

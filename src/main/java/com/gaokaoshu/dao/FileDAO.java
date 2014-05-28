@@ -29,14 +29,14 @@ public class FileDAO {
     /**
      * 根据日志id获取文件列表
      *
-     * @param blogId 日志id
+     * @param typeId 学科分类id
      * @return 日志对应的文件列表
      */
-    public static List<UploadFileEntity> getUploadFileEntityByBlogId(int blogId) {
+    public static List<UploadFileEntity> getUploadFileEntityByTypeId(int typeId) {
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
         Criteria c = session.createCriteria(UploadFileEntity.class);
-        c.add(Restrictions.eq("blog_id", blogId));
+        c.add(Restrictions.eq("type_id", typeId));
         return c.list();
     }
 

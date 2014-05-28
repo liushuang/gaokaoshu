@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,6 +38,7 @@ public class FileController {
     }
 
     @RequestMapping(value = "/admin/upload", method = RequestMethod.POST)
+    @ResponseBody
     public String processUpload(@RequestParam MultipartFile file, Model model, HttpSession session, int blogId, int typeId) throws IOException {
         String filePath = session.getServletContext().getRealPath("/") + "/upload/";
         File dir = new File(filePath);
@@ -45,7 +47,7 @@ public class FileController {
         }
         String originalFileName = file.getOriginalFilename();
         String localFileName ;
-        if(originalFileName.indexOf(".") != -1){
+        if(originalFileName.contains(".")){
             int separator = originalFileName.lastIndexOf(".");
             localFileName = originalFileName.substring(0,separator) + System.currentTimeMillis() + originalFileName.substring(separator);
         }else{
@@ -62,7 +64,7 @@ public class FileController {
         file.transferTo(localFile);
         FileDAO.insertFile(uploadFileEntity);
         model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
-        return "upload";
+        return "success";
     }
 
     /**

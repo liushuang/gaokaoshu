@@ -1,6 +1,5 @@
 var blogId = $('#blog-blogid').val(),
 	typeId = $('#blog-typeid').val();
-
 $.ajax({
 	type: 'get',
 	url: '/admin/getBlogContent?blogId=' + blogId,
@@ -30,7 +29,9 @@ $('#add-editor').click(function() {
 $('#save-editor').click(function() {
 	var num = $('.text-area').length,
 		arrText = [],
-		arrTitle = [],
+		arrTitle = [];
+		author = $('#blog-author').val(),
+		time = $('#blog-time').val(),		
 		blogTitle = $('#blog-title').val();
 	for( var i = 1; i <= num; i++){	
     	var idName = 'myEditor' + i;    
@@ -42,14 +43,18 @@ $('#save-editor').click(function() {
 	};
 	var contentJson = {
 		'blogtitle': blogTitle,
+		'author': author,
+		'time': time,
 		'title' : arrTitle,
 		'text' : arrText
 	};
+	console.log(contentJson);
 	var contentStr = JSON.stringify( contentJson );
 	if( blogId == 0 ){
 		$.ajax({
 			type: 'post',
-			url: '/admin/addBlog?typeId=' + typeId + '&content=' + contentStr,
+			url: '/admin/addBlog?typeId=' + typeId,
+			data: contentStr,
 			success:function(data){
 				if( data == 'success'){
 					alert('保存成功');
@@ -66,7 +71,8 @@ $('#save-editor').click(function() {
 	else{
 		$.ajax({
 			type: 'post',
-			url: '/admin/editBlog?blogId=' + blogId + '&content=' + contentStr,
+			url: '/admin/editBlog?blogId=' + blogId,			
+			data: contentStr,
 			success:function(data){
 				if( data == 'success'){
 					alert('保存成功');
