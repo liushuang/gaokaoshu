@@ -38,16 +38,20 @@ public class DetailController {
     @ResponseBody
     public String addBlog(HttpSession session, int typeId, int voteType) {
         BlogEntity blogEntity = BlogDAO.getBlogByTypeId(typeId);
+        int result = -1;
         if(blogEntity != null){
             if(voteType == 1){// 1代表赞成
                 blogEntity.setGoodCount(blogEntity.getGoodCount() + 1);
+                result = blogEntity.getGoodCount();
             }else if(voteType == 2){// 2代表中立
                 blogEntity.setMiddleCount(blogEntity.getMiddleCount() + 1);
+                result = blogEntity.getMiddleCount();
             }else if(voteType == 3){// 3代表踩
                 blogEntity.setBadCount(blogEntity.getBadCount() + 1);
+                result = blogEntity.getBadCount();
             }
             BlogDAO.updateBlogEntity(blogEntity);
         }
-        return "success";
+        return String.valueOf(result);
     }
 }

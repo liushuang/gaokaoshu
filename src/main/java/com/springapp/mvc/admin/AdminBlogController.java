@@ -35,7 +35,6 @@ public class AdminBlogController {
             if (blogEntity != null) {
                 model.addAttribute("typeId", blogEntity.getTypeId());
                 model.addAttribute("blogId", blogEntity.getId());
-                model.addAttribute("authorName", blogEntity.getAuthorName());
             } else {
                 model.addAttribute("typeId", typeId);
                 model.addAttribute("blogId", blogId);
@@ -45,7 +44,6 @@ public class AdminBlogController {
             if (blogEntity != null) {
                 model.addAttribute("typeId", blogEntity.getTypeId());
                 model.addAttribute("blogId", blogEntity.getId());
-                model.addAttribute("authorName", blogEntity.getAuthorName());
             } else {
                 model.addAttribute("typeId", typeId);
                 model.addAttribute("blogId", blogId);
@@ -71,6 +69,7 @@ public class AdminBlogController {
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
             blogEntity.setContent(content);
             blogEntity.setTypeId(typeId);
+            blogEntity.setId(typeId);
             blogEntity.setAuthorName(authorName);
             BlogDAO.insertBlogEntity(blogEntity);
         }

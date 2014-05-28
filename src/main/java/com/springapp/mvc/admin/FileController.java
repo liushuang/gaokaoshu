@@ -82,7 +82,7 @@ public class FileController {
             try {
                 downFileName = URLEncoder.encode(downFileName, "UTF-8");//转码解决IE下文件名乱码问题
             } catch (Exception e) {
-                e.printStackTrace();
+                // ignore
             }
 
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
