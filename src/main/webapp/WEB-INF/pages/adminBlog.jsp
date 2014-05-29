@@ -35,10 +35,9 @@
     <button class="btn btn-lg btn-success btn-block btn-blog" id="add-editor">增加小节</button>
     <button class="btn btn-lg btn-success btn-block btn-blog" id="save-editor">保存</button>
     <input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
-    <form name="web-info" action="/admin/addBlog" method="post">
+    <form action="/admin/addBlog" method="post" id="saveblog">
         <input name="content" id="blog-content" type="hidden"/>   
         <input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
-        <button class="btn btn-lg btn-success btn-block btn-blog" id="push-editor">提交</button>
     </form>
 </div>
 <div class="will-delete">
@@ -48,7 +47,13 @@
         <button id="no-delete">取消</button>
     </div>
 </div>
-<div>
+<div class="file-upload">
+    <form action="/admin/upload" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="typeId" value="${typeId}">
+        <input type="hidden" name="blogId" value="${blogId}">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
     <ul>
         <c:forEach items="${fileList}" var="file">
             <li>
@@ -59,11 +64,5 @@
     </ul>
 </div>
 <script type="text/javascript" src="/resources/js/backstage-detail.js"></script>
-<form action="/admin/upload" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="typeId" value="${typeId}">
-    <input type="hidden" name="blogId" value="${blogId}">
-    <input type="file" name="file">
-    <button type="submit">Upload</button>
-</form>
 </body>
 </html>

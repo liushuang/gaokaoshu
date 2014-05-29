@@ -172,6 +172,13 @@ h3{
 .blog-content{
 	width: 1000px;
 }
-.btn-blog{
-	width: 30%;
+.file-upload{
+	width: 500px;
+	margin: 0 auto;
+}
+.detail-btn{
+	overflow: hidden;
+}
+.file-upload input, .file-upload button{
+	float: left;
 }
