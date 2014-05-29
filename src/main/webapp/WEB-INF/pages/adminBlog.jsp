@@ -47,6 +47,16 @@
         <button id="no-delete">取消</button>
     </div>
 </div>
+<div>
+    <ul>
+        <c:forEach items="${fileList}" var="file">
+            <li>
+                ${file.originalName}
+                <a href="/admin/deleteFile?id=${file.id}">删除</a>
+            </li>
+        </c:forEach>
+    </ul>
+</div>
 <script type="text/javascript" src="/resources/js/backstage-detail.js"></script>
 <form action="/admin/upload" method="post" enctype="multipart/form-data">
     <input type="hidden" name="typeId" value="${typeId}">

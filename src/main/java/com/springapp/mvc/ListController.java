@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 public class ListController {
     @RequestMapping("/list")
-    public String list(ModelMap model, int targetId){
+    public String list(ModelMap model){
         List<TypeEntity> firstLevelList = TypeDAO.getTypeEntityByLevel(1);
         List<TypeEntity> secondLevelList = TypeDAO.getTypeEntityByLevel(2);
         List<ResultTypeEntity> resultList = new ArrayList<ResultTypeEntity>();
@@ -39,7 +39,6 @@ public class ListController {
             }
         }
         model.addAttribute("type_list", resultList);
-        model.addAttribute("targetId", targetId);
         return "list";
     }
 }

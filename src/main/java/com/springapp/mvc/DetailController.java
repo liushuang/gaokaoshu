@@ -1,10 +1,12 @@
 package com.springapp.mvc;
 
 import com.gaokaoshu.dao.BlogDAO;
+import com.gaokaoshu.dao.FileDAO;
 import com.gaokaoshu.dao.TypeDAO;
 import com.gaokaoshu.dao.ViewCountDAO;
 import com.gaokaoshu.entity.BlogEntity;
 import com.gaokaoshu.entity.TypeEntity;
+import com.gaokaoshu.entity.UploadFileEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * 详情页
@@ -31,6 +36,10 @@ public class DetailController {
         model.addAttribute("blog", blogEntity);
         model.addAttribute("type", typeEntity);
         model.addAttribute("viewCount",viewCount);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        model.addAttribute("create_time",dateFormat.format(blogEntity.getCreateDatetime()));
+        List<UploadFileEntity> uploadFileEntityList = FileDAO.getUploadFileEntityByTypeId(id);
+        model.addAttribute("fileList",uploadFileEntityList);
         return "detail";
     }
 

@@ -31,7 +31,7 @@ public class BlogDAO {
         if (blogEntityList != null && blogEntityList.size() > 0) {
             return;
         }
-        session.save(blogEntity);
+        session.saveOrUpdate(blogEntity);
         session.getTransaction().commit();
         session.close();
     }

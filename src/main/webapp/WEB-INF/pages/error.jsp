@@ -13,5 +13,6 @@
 <body>
 出错啦
 ${message}
+<a href="/admin/login">点击登录</a>
 </body>
 </html>

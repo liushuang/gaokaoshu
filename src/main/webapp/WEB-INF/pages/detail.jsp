@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: liushuang.ls
@@ -41,16 +42,29 @@
     <div class="single-panel-inner">
         <div class="single-panel-header">
             <h3></h3>
-            <b>作者：</b><span></span>
-            <b>发表时间：</b><span></span>
-            <b>访问次数：</b><span></span>
+            <b>作者：</b><span>${blog.authorName}</span>
+            <b>发表时间：</b><span>${create_time}</span>
+            <b>访问次数：</b><span>${viewCount}</span>
         </div>
         <div class="single-panel-body">
         </div>
         <div class="count-btn">
           <a href="javascript:void(0)" id="count-up"><span></span>人顶</a>
           <a href="javascript:void(0)" id="count-normal"><span></span>人觉得无聊</a>
-          <a href="javascript:void(0)" id="count-down"><span></span>人踩</a>         
+          <a href="javascript:void(0)" id="count-down"><span></span>人踩</a>  
+        <div>
+            <ul>
+                <c:forEach items="${fileList}" var="file">
+                    <li>
+                        <a href="/download?id=${file.id}">${file.originalName}</a>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+        <div>
+            <div>顶：${blog.goodCount}</div>
+            <div>无聊：${blog.middleCount}</div>
+            <div>踩：${blog.badCount}</div>
         </div>
     </div>
     <div class="contact-us">
