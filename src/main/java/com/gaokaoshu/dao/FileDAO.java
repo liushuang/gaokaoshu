@@ -36,7 +36,7 @@ public class FileDAO {
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
         Criteria c = session.createCriteria(UploadFileEntity.class);
-        c.add(Restrictions.eq("type_id", typeId));
+        c.add(Restrictions.eq("typeId", typeId));
         return c.list();
     }
 
@@ -47,5 +47,17 @@ public class FileDAO {
         session.getTransaction().commit();
         session.close();
         return uploadFileEntity;
+    }
+
+    /**
+     * 删除一个文件
+     * @param uploadFileEntity
+     */
+    public static void deleteUploadFile(UploadFileEntity uploadFileEntity ){
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(uploadFileEntity);
+        session.getTransaction().commit();
+        session.close();
     }
 }

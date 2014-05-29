@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: liushuang.ls
@@ -43,6 +44,20 @@
             <b>访问次数：</b><span>${viewCount}</span>
         </div>
         <div class="single-panel-body">
+        </div>
+        <div>
+            <ul>
+                <c:forEach items="${fileList}" var="file">
+                    <li>
+                        <a href="/download?id=${file.id}">${file.originalName}</a>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+        <div>
+            <div>顶：${blog.goodCount}</div>
+            <div>无聊：${blog.middleCount}</div>
+            <div>踩：${blog.badCount}</div>
         </div>
     </div>
     <div class="contact-us">

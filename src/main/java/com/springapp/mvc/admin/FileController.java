@@ -38,19 +38,18 @@ public class FileController {
     }
 
     @RequestMapping(value = "/admin/upload", method = RequestMethod.POST)
-    @ResponseBody
     public String processUpload(@RequestParam MultipartFile file, Model model, HttpSession session, int blogId, int typeId) throws IOException {
         String filePath = session.getServletContext().getRealPath("/") + "/upload/";
         File dir = new File(filePath);
-        if(!dir.exists()){
+        if (!dir.exists()) {
             dir.mkdir();
         }
         String originalFileName = file.getOriginalFilename();
-        String localFileName ;
-        if(originalFileName.contains(".")){
+        String localFileName;
+        if (originalFileName.contains(".")) {
             int separator = originalFileName.lastIndexOf(".");
-            localFileName = originalFileName.substring(0,separator) + System.currentTimeMillis() + originalFileName.substring(separator);
-        }else{
+            localFileName = originalFileName.substring(0, separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+        } else {
             localFileName = originalFileName + System.currentTimeMillis();
         }
         File localFile = new File(filePath + localFileName);
@@ -63,8 +62,8 @@ public class FileController {
         uploadFileEntity.setFilePath(localFile.getAbsolutePath());
         file.transferTo(localFile);
         FileDAO.insertFile(uploadFileEntity);
-        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
-        return "success";
+        model.addAttribute("typeId", typeId);
+        return "redirect:/admin/adminBlog";
     }
 
     /**
@@ -74,11 +73,11 @@ public class FileController {
      * @throws IOException
      */
     @RequestMapping("/download")
-    public ResponseEntity<byte[]> downFile(int id)  {
+    public ResponseEntity<byte[]> downFile(int id) {
         UploadFileEntity uploadFileEntity = FileDAO.getUploadFileEntityById(id);
         //Http响应头
         HttpHeaders headers = new HttpHeaders();
-        if(uploadFileEntity!= null){
+        if (uploadFileEntity != null) {
             //默认文件名称
             String downFileName = uploadFileEntity.getOriginalName();
             try {
@@ -104,4 +103,14 @@ public class FileController {
         return new ResponseEntity<byte[]>("文件不存在.".getBytes(), headers, HttpStatus.OK);
     }
 
+    @RequestMapping("/admin/deleteFile")
+    public String deleteFile(Model model, int id) {
+        UploadFileEntity uploadFileEntity = FileDAO.getUploadFileEntityById(id);
+        int typeId = uploadFileEntity.getTypeId();
+        if (uploadFileEntity != null) {
+            FileDAO.deleteUploadFile(uploadFileEntity);
+        }
+        model.addAttribute("typeId", typeId);
+        return "redirect:/admin/adminBlog";
+    }
 }

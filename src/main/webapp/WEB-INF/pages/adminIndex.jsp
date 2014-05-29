@@ -24,7 +24,7 @@
             <ul>
                 <li class="clearfix">
                     <form name="web-info" action="/admin/index/update" method="post">
-                        <input name="id" value="1" type="hidden"/>
+                        <input name="id" value="10" type="hidden"/>
                         <label>网站说明：</label>
                         <textarea class="form-control text-web" name="text">${wangzhanshuoming}</textarea>
                         <button class="btn btn-lg btn-primary btn-block save-web" type="submit">保存</button>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="clearfix">
                     <form name="exam-info" action="/admin/index/update" method="post">
-                        <input name="id" value="2" type="hidden"/>
+                        <input name="id" value="11" type="hidden"/>
                         <label>报考概述：</label>
                         <textarea class="form-control text-exam" name="text">${baokaogaishu}</textarea>
                         <button class="btn btn-lg btn-primary btn-block save-exam" type="submit">保存</button>
