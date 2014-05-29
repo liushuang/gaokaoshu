@@ -31,7 +31,6 @@ $('#save-editor').click(function() {
 		arrText = [],
 		arrTitle = [];
 		author = $('#blog-author').val(),
-		time = $('#blog-time').val(),		
 		blogTitle = $('#blog-title').val();
 	for( var i = 1; i <= num; i++){	
     	var idName = 'myEditor' + i;    
@@ -44,48 +43,12 @@ $('#save-editor').click(function() {
 	var contentJson = {
 		'blogtitle': blogTitle,
 		'author': author,
-		'time': time,
 		'title' : arrTitle,
 		'text' : arrText
 	};
-	console.log(contentJson);
 	var contentStr = JSON.stringify( contentJson );
-	if( blogId == 0 ){
-		$.ajax({
-			type: 'post',
-			url: '/admin/addBlog?typeId=' + typeId,
-			data: contentStr,
-			success:function(data){
-				if( data == 'success'){
-					alert('保存成功');
-				}
-				else{
-					alert('请登录');
-				}
-			},
-			error:function() {
-				alert('保存失败');
-			}
-		})
-	}
-	else{
-		$.ajax({
-			type: 'post',
-			url: '/admin/editBlog?blogId=' + blogId,			
-			data: contentStr,
-			success:function(data){
-				if( data == 'success'){
-					alert('保存成功');
-				}
-				else{
-					alert('请登录');
-				}
-			},
-			error:function() {
-				alert('保存失败');
-			}
-		})
-	};
+	$('#blog-content').val(contentStr);
+	console.log($('#blog-content').val());
 });
 
 $('.delete-editor').live('click',function(){	
