@@ -20,8 +20,6 @@
     <script type="text/javascript" src="/resources/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
-<input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
-<input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
 <!--style给定宽度可以影响编辑器的最终宽度-->
 <div class="container blog-content">
     <div class="clearfix text-title">
@@ -34,8 +32,13 @@
     </div>
 </div>
 <div class="detail-btn">
-    <button class="btn btn-lg btn-success btn-block" id="add-editor">增加小节</button>
-    <button class="btn btn-lg btn-success btn-block" id="save-editor">保存</button>
+    <button class="btn btn-lg btn-success btn-block btn-blog" id="add-editor">增加小节</button>
+    <button class="btn btn-lg btn-success btn-block btn-blog" id="save-editor">保存</button>
+    <form name="web-info" action="/admin/addBlog" method="post">
+        <input name="content" id="blog-content" type="hidden"/>   
+        <input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />
+        <button class="btn btn-lg btn-success btn-block btn-blog" id="push-editor">提交</button>
+    </form>
 </div>
 <div class="will-delete">
     <div class="will-delete-content">

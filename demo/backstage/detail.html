@@ -22,13 +22,16 @@
             <input type="text" id="blog-title" class="form-control">
             <label>作者：</label>
             <input type="text" id="blog-author" class="form-control">
-            <label>时间：</label>
-            <input type="text" id="blog-time" class="form-control">
         </div>
     </div>
     <div class="detail-btn">
-        <button class="btn btn-lg btn-success btn-block" id="add-editor">增加小节</button>
-        <button class="btn btn-lg btn-success btn-block" id="save-editor">保存</button>
+        <button class="btn btn-lg btn-success btn-block btn-blog" id="add-editor">增加小节</button>
+        <button class="btn btn-lg btn-success btn-block btn-blog" id="save-editor">保存</button>
+        <form name="web-info" action="/admin/addBlog" method="post">
+            <input name="content" id="blog-content" type="hidden"/>   
+            <input type="hidden" name="typeId" id="blog-typeid" value="1" />
+            <button class="btn btn-lg btn-success btn-block btn-blog" id="push-editor">提交</button>
+        </form>
     </div>
     <div class="will-delete">
         <div class="will-delete-content">

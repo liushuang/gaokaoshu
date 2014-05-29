@@ -33,8 +33,11 @@
     </div>
 </div>
 <div class="content">
-    <ul class="nav nav-tabs">
-    </ul>
+    <div class="nav">
+        <ul class="nav nav-tabs">
+        </ul>
+        <a href="">下载附件</a>
+    </div>
     <div class="single-panel-inner">
         <div class="single-panel-header">
             <h3></h3>
@@ -44,6 +47,11 @@
         </div>
         <div class="single-panel-body">
         </div>
+        <div class="count-btn">
+          <a href="javascript:void(0)" id="count-up"><span></span>人顶</a>
+          <a href="javascript:void(0)" id="count-normal"><span></span>人觉得无聊</a>
+          <a href="javascript:void(0)" id="count-down"><span></span>人踩</a>         
+        </div>
     </div>
     <div class="contact-us">
         <h3>联系方式</h3>
@@ -52,6 +60,7 @@
 </div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <script type="text/javascript" src="/resources/js/jQuery.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="/resources/js/detail.js"></script>
 </body>
