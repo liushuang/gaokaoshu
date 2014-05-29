@@ -45,10 +45,14 @@
     </div>
 </div>
 <div>
-    <c:forEach items="${fileList}" var="file">
-        ${file.id}
-        ${file.originalName}
-    </c:forEach>
+    <ul>
+        <c:forEach items="${fileList}" var="file">
+            <li>
+                ${file.originalName}
+                <a href="/admin/deleteFile?id=${file.id}">删除</a>
+            </li>
+        </c:forEach>
+    </ul>
 </div>
 <script type="text/javascript" src="/resources/js/backstage-detail.js"></script>
 <form action="/admin/upload" method="post" enctype="multipart/form-data">
