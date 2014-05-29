@@ -64,3 +64,12 @@
     font-size: 16px;
     margin: 5px 0;
 }
+.count-btn a {
+    padding-right: 10px;
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+.count-btn span{
+    color: #F47056;    
+}

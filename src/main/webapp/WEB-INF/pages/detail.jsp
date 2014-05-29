@@ -49,9 +49,9 @@
         <div class="single-panel-body">
         </div>
         <div class="count-btn">
-          <a href="javascript:void(0)" id="count-up"><span></span>人顶</a>
-          <a href="javascript:void(0)" id="count-normal"><span></span>人觉得无聊</a>
-          <a href="javascript:void(0)" id="count-down"><span></span>人踩</a>  
+          <a href="javascript:void(0)" id="count-up"><span>${blog.goodCount}</span>人顶</a>
+          <a href="javascript:void(0)" id="count-normal"><span>${blog.middleCount}</span>人觉得无聊</a>
+          <a href="javascript:void(0)" id="count-down"><span>${blog.badCount}</span>人踩</a>
         <div>
             <ul>
                 <c:forEach items="${fileList}" var="file">
@@ -60,11 +60,6 @@
                     </li>
                 </c:forEach>
             </ul>
-        </div>
-        <div>
-            <div>顶：${blog.goodCount}</div>
-            <div>无聊：${blog.middleCount}</div>
-            <div>踩：${blog.badCount}</div>
         </div>
     </div>
     <div class="contact-us">
