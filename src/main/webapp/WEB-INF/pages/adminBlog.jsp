@@ -34,6 +34,7 @@
 <div class="detail-btn">
     <button class="btn btn-lg btn-success btn-block btn-blog" id="add-editor">增加小节</button>
     <button class="btn btn-lg btn-success btn-block btn-blog" id="save-editor">保存</button>
+    <input type="hidden" name="blogId" id="blog-blogid" value="${blogId}" />
     <form name="web-info" action="/admin/addBlog" method="post">
         <input name="content" id="blog-content" type="hidden"/>   
         <input type="hidden" name="typeId" id="blog-typeid" value="${typeId}" />

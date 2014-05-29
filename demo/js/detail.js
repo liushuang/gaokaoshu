@@ -1,5 +1,6 @@
 var blogId = $('#blog-blogid').val(),
-	typeId = $('#blog-typeid').val();
+	typeId = $('#blog-typeid').val(),
+	cookieVal = 'hasSetcount' + typeId ;
 	
 $.ajax({
 	type: 'get',
@@ -23,7 +24,7 @@ $('.nav a').live('click',function(){
 })
 
 function setCount(em,type){	
-	if( $.cookie('hasSetcount') ){
+	if( $.cookie(cookieVal) ){
 		return false;
 	}
 	else{
@@ -37,7 +38,7 @@ function setCount(em,type){
 		});
 				var index = em.find('span').text();
 				em.find('span').text(++index);
-	    $.cookie('hasSetcount', 1, { path: '/', expires: 30000000 });
+	    $.cookie( cookieVal , 1, { path: '/', expires: 30000000 });
 	};
 }
 

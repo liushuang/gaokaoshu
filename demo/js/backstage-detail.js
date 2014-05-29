@@ -48,7 +48,6 @@ $('#save-editor').click(function() {
 	};
 	var contentStr = JSON.stringify( contentJson );
 	$('#blog-content').val(contentStr);
-	console.log($('#blog-content').val());
 });
 
 $('.delete-editor').live('click',function(){	

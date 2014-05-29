@@ -50,6 +50,10 @@ body{
     padding: 10px;
     font-size: 16px;
 }
+.project-list a {
+    color: #333333;
+    text-decoration: none;
+}
 .contact-fixed{
     float: right;
     padding: 20px;

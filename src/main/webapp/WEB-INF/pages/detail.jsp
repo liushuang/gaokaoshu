@@ -35,7 +35,7 @@
 </div>
 <div class="content">
     <div class="nav">
-        <ul class="nav nav-tabs">
+        <ul class="nav-tabs">
         </ul>
         <a href="">下载附件</a>
     </div>
