@@ -25,12 +25,6 @@ public class BlogDAO {
     public static void insertBlogEntity(BlogEntity blogEntity){
         Session session = SessionFactoryHelper.getSessionFactory().openSession();
         session.beginTransaction();
-        Criteria c = session.createCriteria(BlogEntity.class);
-        c.add(Restrictions.eq("typeId", blogEntity.getTypeId()));
-        List<BlogEntity> blogEntityList = c.list();
-        if (blogEntityList != null && blogEntityList.size() > 0) {
-            return;
-        }
         session.saveOrUpdate(blogEntity);
         session.getTransaction().commit();
         session.close();

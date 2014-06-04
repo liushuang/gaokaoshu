@@ -58,27 +58,34 @@ public class AdminBlogController {
         }
         model.addAttribute("blog", blogEntity);
         List<UploadFileEntity> fileEntryList = FileDAO.getUploadFileEntityByTypeId(typeId);
-        model.addAttribute("fileList",fileEntryList);
+        model.addAttribute("fileList", fileEntryList);
         return "adminBlog";
     }
 
     @RequestMapping("/admin/addBlog")
-    @ResponseBody
-    public String addBlog(HttpSession session, int typeId, String content, String authorName) {
+    public String addBlog(ModelMap model, HttpSession session, int typeId, String content) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
-                return "need login";
+                return "error";
             }
         } else {
-            BlogEntity blogEntity = new BlogEntity();
+
+            BlogEntity blogEntity = null;
+            blogEntity = BlogDAO.getBlogByTypeId(typeId);
+            if (blogEntity == null) {
+                blogEntity = new BlogEntity();
+                blogEntity.setGoodCount(0);
+                blogEntity.setMiddleCount(0);
+                blogEntity.setBadCount(0);
+            }
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
             blogEntity.setContent(content);
             blogEntity.setTypeId(typeId);
             blogEntity.setId(typeId);
-            blogEntity.setAuthorName(authorName);
             BlogDAO.insertBlogEntity(blogEntity);
         }
-        return "success";
+        model.addAttribute("typeId", typeId);
+        return "redirect:/admin/adminBlog";
     }
 
     @RequestMapping("/admin/getBlogContent")

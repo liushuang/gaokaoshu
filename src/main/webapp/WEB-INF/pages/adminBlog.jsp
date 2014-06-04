@@ -27,8 +27,6 @@
         <input type="text" id="blog-title" class="form-control">
         <label>作者：</label>
         <input type="text" id="blog-author" class="form-control">
-        <label>时间：</label>
-        <input type="text" id="blog-time" class="form-control">
     </div>
 </div>
 <div class="detail-btn">
