@@ -13,7 +13,7 @@ CREATE TABLE `view_count` (
 
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text,
+  `content` longtext,
   `type_id` int(11) DEFAULT NULL COMMENT '专业id',
   `create_datetime` datetime DEFAULT NULL COMMENT '创建时间',
   `good_count` int(11) DEFAULT NULL,

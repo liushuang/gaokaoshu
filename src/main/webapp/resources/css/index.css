@@ -17,7 +17,7 @@ body{
 	background-color: #FBFBFB;
 }
 h3{
-	font-size: 16px;
+	font-size: 20px;
 }
 h4{
 	font-size: 14px;
@@ -31,8 +31,14 @@ body{
 }
 .content{
 	margin: 0 auto 80px;
-	width: 1020px;
+	width: 990px;
+    text-align: center;
 	overflow: hidden;
+}
+.content span{
+    margin: 0 20px;
+    color: #333;
+    font-size: 14px;
 }
 .main{
 	position: relative;
@@ -121,7 +127,7 @@ body{
 	margin-top: 5px;
 }
 .carousel-caption p{
-	line-height: 2;
+    font-size: 14px;
 }
 .carousel-inner {
     position: relative;
@@ -170,7 +176,7 @@ body{
 .web-info{
 	float: left;
 	width: 300px;
-	margin-left: 30px;
+	margin: 0 0 50px 30px;
 }
 .web-info h4{
 	font-size: 28px;
@@ -187,7 +193,9 @@ body{
     font-family: 'simsun';
 }
 .web-info a{
-    color: #F47056;    
+    padding-left: 15px;
+    color: #F47056;   
+    text-decoration: none; 
 }
 .header {
     background-color: #393939;

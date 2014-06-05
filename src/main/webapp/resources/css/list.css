@@ -24,15 +24,15 @@ body{
     top: 140px;
 }
 .nav a {
-    position: relative;
+    color: #333333;
     display: block;
-    padding: 0 15px;
-    margin: 10px 0; 
-    color: #333;
     font-size: 16px;
-    text-decoration: none;
-    width: 64px;
+    margin: 10px 0;
+    position: relative;
     text-align: center;
+    text-decoration: none;
+    width: 94px;
+    word-break: break-all;
 }
 .nav a:hover, .project-list a:hover{
     color: #d14836;
@@ -49,6 +49,10 @@ body{
     margin: 0 20px;
     padding: 10px;
     font-size: 16px;
+}
+.project-list a {
+    color: #333333;
+    text-decoration: none;
 }
 .contact-fixed{
     float: right;
@@ -164,6 +168,7 @@ h2{
     margin-top: 60px;
 }
 .content{
+    text-align: left;
     margin-top: 20px;
     width: 850px;
     padding-right: 170px;
