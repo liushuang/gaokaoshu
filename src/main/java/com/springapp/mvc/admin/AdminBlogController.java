@@ -100,7 +100,7 @@ public class AdminBlogController {
 
     @RequestMapping("/admin/editBlog")
     @ResponseBody
-    public String editBlog(HttpSession session, int blogId, String content, String authorName) {
+    public String editBlog(HttpSession session, int blogId, String content) {
         if (!AdminUtil.isAdmin(session)) {
             if (!AdminUtil.isAdmin(session)) {
                 return "need login";
@@ -111,7 +111,6 @@ public class AdminBlogController {
         if (blogEntity != null) {
             blogEntity.setContent(content);
             blogEntity.setCreateDatetime(new Timestamp(System.currentTimeMillis()));
-            blogEntity.setAuthorName(authorName);
             BlogDAO.updateBlogEntity(blogEntity);
         }
         return "success";

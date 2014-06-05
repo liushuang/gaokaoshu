@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>报考书</title>
     <link rel="stylesheet" href="/resources/css/index.css">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
@@ -48,8 +49,12 @@
                     <div class="item">                        
                         <a href="${type.link}" target="_blank"><img alt="" src="${type.imgUrl}"></a>
                         <div class="carousel-caption">
-                            <h3>${type.title}</h3>
-                            <p>${type.description}</p>
+                            <a href="${type.link}" target="_blank">
+                                <h3>${type.title}</h3>
+                            </a>
+                            <a href="${type.link}" target="_blank">
+                                <p>${type.description}</p>
+                            </a>
                         </div>
                     </div>
                 </c:forEach>
@@ -74,7 +79,7 @@
             <h4>联系方式</h4>
             <p>网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明<a href="/type/12">更多>></a></p>
         </div>
-        <span>访问人数：${view_count}</span><span>京ICP备14021289号</span>
+        <span>访问人数：${view_count}</span><span><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14021289号</a></span>
     </div>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
     <script type="text/javascript" src="/resources/js/jQuery.js"></script>

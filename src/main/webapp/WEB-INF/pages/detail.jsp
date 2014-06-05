@@ -42,7 +42,7 @@
     <div class="single-panel-inner">
         <div class="single-panel-header">
             <h3></h3>
-            <b>作者：</b><span>${blog.authorName}</span>
+            <b>作者：</b><span></span>
             <b>发表时间：</b><span>${create_time}</span>
             <b>访问次数：</b><span>${viewCount}</span>
         </div>
