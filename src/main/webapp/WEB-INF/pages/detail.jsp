@@ -37,7 +37,7 @@
     <div class="nav">
         <ul class="nav-tabs">
         </ul>
-        <a href="">下载附件</a>
+        <a data-local="blog-download" href="" id="down-link">下载附件</a>
     </div>
     <div class="single-panel-inner">
         <div class="single-panel-header">
@@ -48,11 +48,8 @@
         </div>
         <div class="single-panel-body">
         </div>
-        <div class="count-btn">
-          <a href="javascript:void(0)" id="count-up"><span>${blog.goodCount}</span>人顶</a>
-          <a href="javascript:void(0)" id="count-normal"><span>${blog.middleCount}</span>人觉得无聊</a>
-          <a href="javascript:void(0)" id="count-down"><span>${blog.badCount}</span>人踩</a>
-        <div>
+        <div id="blog-download" class="blog-download">
+            <h4>附件下载：</h4>
             <ul>
                 <c:forEach items="${fileList}" var="file">
                     <li>
@@ -60,6 +57,11 @@
                     </li>
                 </c:forEach>
             </ul>
+        </div>
+        <div class="count-btn">
+          <a href="javascript:void(0)" id="count-up"><span>${blog.goodCount}</span>人顶</a>
+          <a href="javascript:void(0)" id="count-normal"><span>${blog.middleCount}</span>人觉得无聊</a>
+          <a href="javascript:void(0)" id="count-down"><span>${blog.badCount}</span>人踩</a>
         </div>
     </div>
     <div class="contact-us">
