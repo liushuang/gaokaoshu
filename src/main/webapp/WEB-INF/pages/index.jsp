@@ -48,13 +48,9 @@
                 <c:forEach items="${second_hot_list}" var="type" begin="0" end="3">
                     <div class="item">                        
                         <a href="${type.link}" target="_blank"><img alt="" src="${type.imgUrl}"></a>
-                        <div class="carousel-caption">
-                            <a href="${type.link}" target="_blank">
-                                <h3>${type.title}</h3>
-                            </a>
-                            <a href="${type.link}" target="_blank">
-                                <p>${type.description}</p>
-                            </a>
+                        <div class="carousel-caption">                            
+                            <h3><a href="${type.link}" target="_blank">${type.title}</a></h3>                           
+                            <p><a href="${type.link}" target="_blank">${type.description}</a></p>
                         </div>
                     </div>
                 </c:forEach>
