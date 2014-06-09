@@ -113,4 +113,28 @@ public class FileController {
         model.addAttribute("typeId", typeId);
         return "redirect:/admin/adminBlog";
     }
+
+    @RequestMapping(value = "/admin/uploadImage", method = RequestMethod.GET)
+    public String uploadImage() throws IOException {
+        return "uploadImage";
+    }
+
+    @RequestMapping(value = "/admin/uploadImage", method = RequestMethod.POST)
+    public String uploadImage(@RequestParam MultipartFile file, Model model, HttpSession session) throws IOException {
+        String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
+        File dir = new File(filePath);
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        String originalFileName = file.getOriginalFilename();
+
+        String localFileName = String.valueOf(System.currentTimeMillis());
+        if (originalFileName.contains(".")) {
+            localFileName = localFileName + originalFileName.substring(originalFileName.indexOf("."));
+        }
+        File localFile = new File(filePath + localFileName);
+        file.transferTo(localFile);
+        model.addAttribute("message", "/resources/images/" + localFileName);
+        return "uploadImage";
+    }
 }
