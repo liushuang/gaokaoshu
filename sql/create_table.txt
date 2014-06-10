@@ -24,8 +24,8 @@ CREATE TABLE `blog` (
 
 CREATE TABLE `upload_file` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `original_name` varchar(256) DEFAULT NULL COMMENT '原始文件名',
-  `file_name` varchar(256) DEFAULT NULL COMMENT '磁盘中文件名',
+  `original_name` varchar(256) DEFAULT NULL COMMENT '原始文件',
+  `file_name` varchar(256) DEFAULT NULL COMMENT '磁盘中文件',
   `file_path` varchar(256) DEFAULT NULL COMMENT '文件路径',
   `blog_id` int(11) DEFAULT NULL COMMENT '日志id',
   `type_id` int(11) DEFAULT NULL COMMENT '科目id',
@@ -40,9 +40,9 @@ CREATE TABLE `hot_type` (
   `img_url` varchar(256) DEFAULT NULL COMMENT '图片链接',
   `description` varchar(256) DEFAULT NULL COMMENT '文字描述',
   `create_datetime` datetime DEFAULT NULL,
-  `link` varchar(512) DEFAULT NULL COMMENT ’跳转链接’,
+  `link` varchar(512) DEFAULT NULL COMMENT '跳转链接',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -50,5 +50,5 @@ CREATE TABLE `type` (
   `name` varchar(256) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
