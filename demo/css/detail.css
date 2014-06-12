@@ -49,8 +49,8 @@
 }
 .content{
     margin-top: 90px;
-    padding: 0 40px 0 0;
-    width: 680px;
+    padding: 0 0 0 12px;
+    width: 630px;
 }
 .nav, .contact-us{
     top: 90px;
@@ -90,4 +90,8 @@
     display: block;
     font-size: 14px;
     margin-top: 5px;
+}
+.nav a{
+    width: 150px;
+    text-align: left;
 }

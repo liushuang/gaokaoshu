@@ -36,7 +36,6 @@ body{
 	overflow: hidden;
 }
 .content span{
-    margin: 0 20px;
     color: #333;
     font-size: 14px;
 }
@@ -335,4 +334,7 @@ body{
 }
 .row-fluid .row-first a{
 	font-weight: bold;
+}
+.contact-us img {
+    width: 150px;
 }

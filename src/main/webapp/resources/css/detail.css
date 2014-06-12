@@ -49,8 +49,8 @@
 }
 .content{
     margin-top: 90px;
-    padding: 0 40px 0 0;
-    width: 680px;
+    padding: 0 0 0 12px;
+    width: 630px;
 }
 .nav, .contact-us{
     top: 90px;
@@ -64,6 +64,9 @@
     font-size: 16px;
     margin: 5px 0;
 }
+.count-btn{
+    margin-top: 20px;
+}
 .count-btn a {
     padding-right: 10px;
     color: #666;
@@ -71,8 +74,24 @@
     text-decoration: none;
 }
 .count-btn span{
+    margin: 0;
     color: #F47056;    
 }
 .content{
+    text-align: left;
+}
+.blog-download h4 {
+    color: #F47056;
+    font-size: 16px;
+    font-weight: normal;
+}
+.blog-download a {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.nav a{
+    width: 150px;
     text-align: left;
 }
