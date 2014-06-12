@@ -7,6 +7,7 @@ $.ajax({
 		var contentAll = eval('(' + data + ')'); 
 		var index = contentAll.text.length;
 		$('#blog-title').val(contentAll.blogtitle);
+		$('#blog-author').val(contentAll.author);
 		for( var i = 1; i <= index; i++ ){	
 		    $('.container').append('<div class="text-area"><div class="clearfix text-title"><label>小标题：</label><input type="text" class="form-control" id="input-title' + i + '"><button class="btn btn-lg btn-primary btn-block delete-editor">删除小节</button></div><script type="text/plain" id="myEditor' + i + '" style="width:1000px;height:240px;">请输入内容</script></div>');
 		    var idName = 'myEditor' + i;

@@ -48,9 +48,9 @@ public class FileController {
         String localFileName;
         if (originalFileName.contains(".")) {
             int separator = originalFileName.lastIndexOf(".");
-            localFileName = originalFileName.substring(0, separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+            localFileName =  System.currentTimeMillis() + originalFileName.substring(separator);
         } else {
-            localFileName = originalFileName + System.currentTimeMillis();
+            localFileName = String.valueOf(System.currentTimeMillis());
         }
         File localFile = new File(filePath + localFileName);
         UploadFileEntity uploadFileEntity = new UploadFileEntity();
@@ -112,5 +112,29 @@ public class FileController {
         }
         model.addAttribute("typeId", typeId);
         return "redirect:/admin/adminBlog";
+    }
+
+    @RequestMapping(value = "/admin/uploadImage", method = RequestMethod.GET)
+    public String uploadImage() throws IOException {
+        return "uploadImage";
+    }
+
+    @RequestMapping(value = "/admin/uploadImage", method = RequestMethod.POST)
+    public String uploadImage(@RequestParam MultipartFile file, Model model, HttpSession session) throws IOException {
+        String filePath = session.getServletContext().getRealPath("/") + "/resources/images/";
+        File dir = new File(filePath);
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        String originalFileName = file.getOriginalFilename();
+
+        String localFileName = String.valueOf(System.currentTimeMillis());
+        if (originalFileName.contains(".")) {
+            localFileName = localFileName + originalFileName.substring(originalFileName.indexOf("."));
+        }
+        File localFile = new File(filePath + localFileName);
+        file.transferTo(localFile);
+        model.addAttribute("message", "/resources/images/" + localFileName);
+        return "uploadImage";
     }
 }
