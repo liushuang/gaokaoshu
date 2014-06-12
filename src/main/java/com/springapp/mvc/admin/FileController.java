@@ -48,9 +48,9 @@ public class FileController {
         String localFileName;
         if (originalFileName.contains(".")) {
             int separator = originalFileName.lastIndexOf(".");
-            localFileName = originalFileName.substring(0, separator) + System.currentTimeMillis() + originalFileName.substring(separator);
+            localFileName =  System.currentTimeMillis() + originalFileName.substring(separator);
         } else {
-            localFileName = originalFileName + System.currentTimeMillis();
+            localFileName = String.valueOf(System.currentTimeMillis());
         }
         File localFile = new File(filePath + localFileName);
         UploadFileEntity uploadFileEntity = new UploadFileEntity();
