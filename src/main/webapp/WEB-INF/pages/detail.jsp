@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: liushuang.ls
@@ -52,7 +54,9 @@
     <div class="nav">
         <ul class="nav-tabs">
         </ul>
-        <a data-local="blog-download" href="" id="down-link">下载附件</a>
+        <c:if test="${fn:length(fileList) > 0}">
+            <a data-local="blog-download" href="" id="down-link">下载附件</a>
+        </c:if>
     </div>
     <div class="single-panel-inner">
         <div class="single-panel-header">
@@ -63,16 +67,18 @@
         </div>
         <div class="single-panel-body">
         </div>
-        <div id="blog-download" class="blog-download">
-            <h4>附件下载：</h4>
-            <ul>
-                <c:forEach items="${fileList}" var="file">
-                    <li>
-                        <a href="/download?id=${file.id}">${file.originalName}</a>
-                    </li>
-                </c:forEach>
-            </ul>
-        </div>
+        <c:if test="${fn:length(fileList) > 0}">
+            <div id="blog-download" class="blog-download">
+                <h4>附件下载：</h4>
+                <ul>
+                    <c:forEach items="${fileList}" var="file">
+                        <li>
+                            <a href="/download?id=${file.id}">${file.originalName}</a>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </c:if>
         <div class="count-btn">
           <a href="javascript:void(0)" id="count-up"><span>${blog.goodCount}</span>人顶</a>
           <a href="javascript:void(0)" id="count-normal"><span>${blog.middleCount}</span>人觉得无聊</a>
