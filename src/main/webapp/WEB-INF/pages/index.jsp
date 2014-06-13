@@ -73,9 +73,9 @@
         </div>
         <div class="web-info ">
             <h4>联系方式</h4>
-            <p>网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明网站说明<a href="/type/12">更多>></a></p>
+            <p>邮箱：baokaoshu@163.com<br />微信：公共主页-志愿君<br />微博：<a href="http://weibo.com/u/3224913505" target="_blank" style="padding:0;">@学长学姐说专业</a><br />QQ群：133190918<br /><a href="/type/12">更多>></a></p>
         </div>
-        <span>访问人数：${view_count}</span><span><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14021289号</a></span>
+        <span>访问人数：${view_count}</span><span style="margin-left: 20px"><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14021289号</a></span>
     </div>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
     <script type="text/javascript" src="/resources/js/jQuery.js"></script>
