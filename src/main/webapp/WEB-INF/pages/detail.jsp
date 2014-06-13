@@ -27,8 +27,23 @@
             <ul>
                 <li><a href="/">首页</a></li>
                 <li><a href="/list">列表页</a></li>
-                <li class="home-select nav-select"><a href="">学科文章</a></li>
-                <li><a href="">联系我们</a></li>
+                <li class="home-select nav-select"><a href="javascript:void(0)">
+                    <c:choose>
+                        <c:when test="${blog.typeId} == 10">
+                            网站说明
+                        </c:when>
+                        <c:when test="${blog.typeId} == 11">
+                            报考概述
+                        </c:when>
+                        <c:when test="${blog.typeId} == 12">
+                            联系我们
+                        </c:when>
+                        <c:otherwise>
+                            学科文章
+                        </c:otherwise>
+                    </c:choose>
+                    </a></li>
+                <li><a href="/type/12">联系我们</a></li>
             </ul>
         </div>
     </div>
