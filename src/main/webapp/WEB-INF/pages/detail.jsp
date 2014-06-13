@@ -31,13 +31,13 @@
                 <li><a href="/list">列表页</a></li>
                 <li class="home-select nav-select"><a href="javascript:void(0)">
                     <c:choose>
-                        <c:when test="${blog.typeId} == 10">
+                        <c:when test="${blog.typeId  == 10}">
                             网站说明
                         </c:when>
-                        <c:when test="${blog.typeId} == 11">
+                        <c:when test="${blog.typeId == 11}">
                             报考概述
                         </c:when>
-                        <c:when test="${blog.typeId} == 12">
+                        <c:when test="${blog.typeId == 12}">
                             联系我们
                         </c:when>
                         <c:otherwise>
