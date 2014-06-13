@@ -55,7 +55,7 @@
         <ul class="nav-tabs">
         </ul>
         <c:if test="${fn:length(fileList) > 0}">
-            <a data-local="blog-download" href="" id="down-link">下载附件</a>
+            <a data-local="blog-download" href="javascript:void(0)" id="down-link">下载附件</a>
         </c:if>
     </div>
     <div class="single-panel-inner">
