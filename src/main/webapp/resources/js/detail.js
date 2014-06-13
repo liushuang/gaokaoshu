@@ -18,12 +18,12 @@ $.ajax({
 	}
 });
 
-$('.nav a').live('click',function(){	
+$('.nav-tabs a').live('click',function(){	
 	var domId = $(this).attr('data-local');
 	$("html,body").animate({scrollTop:$("#blog-title" + domId).offset().top - 80},300);
 });
 
-$('#down-link').live('click',function(){	
+$('#down-link').click(function(){	
 	var domId = $(this).attr('data-local');
 	$("html,body").animate({scrollTop:$("#" + domId).offset().top - 80},300);
 })
