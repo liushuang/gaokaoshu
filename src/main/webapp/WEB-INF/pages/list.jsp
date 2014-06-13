@@ -51,6 +51,7 @@
     <div class="contact-us">
         <h3>联系方式</h3>
         <img src="/resources/images/contact.jpg" />
+        <p>邮箱：baokaoshu@163.com<br>微信：公共主页-志愿君<br>微博：<a target="_blank" href="http://weibo.com/u/3224913505" style="padding: 0px;">@学长学姐说专业</a><br>QQ群：133190918<br></p>
     </div>
 </div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","renren","tqq","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>

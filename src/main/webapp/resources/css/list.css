@@ -184,3 +184,11 @@ h2{
     margin-left: 340px;
     width: 150px;
 }
+.contact-us p {
+    font-size: 16px;
+    word-break: break-all;
+}
+.contact-us a{
+    color: #F47056;
+    text-decoration: none;
+}
