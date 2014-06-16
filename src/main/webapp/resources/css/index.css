@@ -216,7 +216,15 @@ body{
 }
 .header-box {
     margin: 0 auto;
-    width: 905px;
+    width: 1000px;
+    overflow: hidden;
+}
+.logo {
+    display: inline;
+    float: left;
+    margin-top: 12px;
+    overflow: hidden;
+    width: 90px;
 }
 .main-nav {
     display: inline;

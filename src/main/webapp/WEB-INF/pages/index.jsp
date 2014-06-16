@@ -10,7 +10,7 @@
     <div class="header ">
         <div class="header-box">
             <div class="logo">
-                <a href=""></a>
+                <a href=""><img src="/resources/images/logo.png"></a>
             </div>
             <div class="main-nav">
                 <ul>
