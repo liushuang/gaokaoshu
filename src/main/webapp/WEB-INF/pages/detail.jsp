@@ -45,7 +45,7 @@
                         </c:otherwise>
                     </c:choose>
                     </a></li>
-                <li><a href="/type/12">联系我们</a></li>
+                <li><a href="/type/12">关于我们</a></li>
             </ul>
         </div>
     </div>

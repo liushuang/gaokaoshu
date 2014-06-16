@@ -16,7 +16,7 @@
                 <ul>
                     <li class="home-select nav-select"><a href="/">首页</a></li>
                     <li><a href="/list">列表页</a></li>
-                    <li><a href="/type/12">联系我们</a></li>
+                    <li><a href="/type/12">关于我们</a></li>
                 </ul>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <ul>
                 <li class="row-first">
                     <a href="javascript:void(0)">
-                        热门学科
+                        学科分类
                     </a>
                 </li>
                 <c:forEach items="${first_hot_list}" var="type" begin="0" end="8">

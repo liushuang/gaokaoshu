@@ -134,7 +134,7 @@ public class FileController {
         }
         File localFile = new File(filePath + localFileName);
         file.transferTo(localFile);
-        model.addAttribute("message", "/resources/images/" + localFileName);
+        model.addAttribute("message", "http://www.baokaoshu.com/resources/images/" + localFileName);
         return "uploadImage";
     }
 }
