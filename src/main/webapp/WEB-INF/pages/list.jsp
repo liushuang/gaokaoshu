@@ -23,7 +23,7 @@
         <div class="main-nav">
             <ul>
                 <li><a href="/">首页</a></li>
-                <li class="home-select nav-select"><a href="/list">列表页</a></li>
+                <li class="home-select nav-select"><a href="/list">学科列表</a></li>
                 <li><a href="/type/12">关于我们</a></li>
             </ul>
         </div>
