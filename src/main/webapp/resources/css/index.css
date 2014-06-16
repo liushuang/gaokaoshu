@@ -303,10 +303,11 @@ body{
     margin: auto;
     text-align: center;
     width: 600px;
-    height: 100px;
+    height: 50px;
     line-height: 100px;
 }
 .section-title span {
+    display: none;
     padding: 0 20px;
     position: relative;
     z-index: 5;
@@ -314,9 +315,9 @@ body{
     background-color: #FBFBFB;
 }
 .section-title:before {
+    display: none;
     border-top: 1px solid #333333;
     content: "";
-    display: block;
     height: 1px;
     margin-top: 50px;
     position: absolute;
@@ -336,5 +337,7 @@ body{
 	font-weight: bold;
 }
 .contact-us img {
-    width: 150px;
+    border: 1px solid #EEEEEE;
+    margin: 10px 0;
+    width: 188px;
 }
