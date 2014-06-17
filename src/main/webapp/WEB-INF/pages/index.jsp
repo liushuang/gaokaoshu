@@ -73,7 +73,7 @@
         </div>
         <div class="web-info ">
             <h4>联系方式</h4>
-            <p>邮箱：baokaoshu@163.com<br />微信：公共主页-志愿君<br />微博：<a href="http://weibo.com/u/3224913505" target="_blank" style="padding:0;">@学长学姐说专业</a><br />QQ群：133190918<br /><a href="/type/12">更多>></a></p>
+            <p style="text-align:left;padding-left:40px;">邮箱：baokaoshu@163.com<br />微信：公共主页-志愿君<br />微博：<a href="http://weibo.com/u/3224913505" target="_blank" style="padding:0;">@学长学姐说专业</a><br />QQ群：133190918<br /><a href="/type/12" style="padding-left:0px;">更多>></a></p>
         </div>
         <span>访问人数：${view_count}</span><span style="margin-left: 20px"><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14021289号</a></span>
     </div>
