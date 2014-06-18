@@ -11,7 +11,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${type.name}</title>
+    <title>报考书_${type.name}</title>
+    <meta content="报考、高考报考、报考说明、报考经验、报考概述、专业、专业介绍、学科介绍、选专业、大学专业" name="keywords">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link rel="stylesheet" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/list.css">
@@ -29,7 +30,8 @@
             <ul>
                 <li><a href="/">首页</a></li>
                 <li><a href="/list">学科列表</a></li>
-                <li class="home-select nav-select"><a href="javascript:void(0)">
+                <li class="home-select nav-select">
+                    <a href="javascript:void(0)">
                     <c:choose>
                         <c:when test="${blog.typeId  == 10}">
                             网站说明

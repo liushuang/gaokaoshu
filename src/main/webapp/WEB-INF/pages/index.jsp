@@ -2,7 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>报考书</title>
+    <title>报考书_首页</title>
+    <meta content="报考、高考报考、报考说明、报考经验、报考概述、专业、专业介绍、学科介绍、选专业、大学专业" name="keywords">
     <link rel="stylesheet" href="/resources/css/index.css">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
