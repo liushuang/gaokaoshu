@@ -68,7 +68,7 @@
             <p>${web_introduction.text}<a href="/type/10">更多>></a></p>
         </div>
         <div class="web-info ">
-            <h4>报考概述</h4>
+            <h4>报考综述</h4>
             <p>${baokaogaishu.text}<a href="/type/11">更多>></a></p>
         </div>
         <div class="web-info ">

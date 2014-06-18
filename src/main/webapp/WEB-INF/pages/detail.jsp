@@ -23,7 +23,7 @@
 <div class="header ">
     <div class="header-box">
         <div class="logo">
-            <a href=""></a>
+            <a href=""><img src="/resources/images/logo.png"></a>
         </div>
         <div class="main-nav">
             <ul>
@@ -38,14 +38,23 @@
                             报考概述
                         </c:when>
                         <c:when test="${blog.typeId == 12}">
-                            联系我们
+                            关于我们
                         </c:when>
                         <c:otherwise>
                             学科文章
                         </c:otherwise>
                     </c:choose>
-                    </a></li>
-                <li><a href="/type/12">关于我们</a></li>
+                    </a>
+                </li>
+                <c:choose>
+                    <c:when test="${blog.typeId == 12}">
+                    </c:when>
+                    <c:otherwise>
+                    <li>
+                        <a href="/type/12">关于我们</a>
+                    </li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
