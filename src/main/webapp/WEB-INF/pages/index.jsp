@@ -66,15 +66,15 @@
         </div>
         <div class="web-info ">
             <h4>网站说明</h4>
-            <p>${web_introduction.text}<a href="/type/10">更多>></a></p>
+            <p>${web_introduction.text}<a target="_blank" href="/type/10" >更多>></a></p>
         </div>
         <div class="web-info ">
             <h4>报考综述</h4>
-            <p>${baokaogaishu.text}<a href="/type/11">更多>></a></p>
+            <p>${baokaogaishu.text}<a target="_blank" href="/type/11">更多>></a></p>
         </div>
         <div class="web-info ">
             <h4>联系方式</h4>
-            <p style="text-align:left;padding-left:40px;">邮箱：baokaoshu@163.com<br />微信：公共主页-志愿君<br />微博：<a href="http://weibo.com/u/3224913505" target="_blank" style="padding:0;">@学长学姐说专业</a><br />QQ群：133190918<br /><a href="/type/12" style="padding-left:0px;">更多>></a></p>
+            <p style="text-align:left;padding-left:40px;">邮箱：baokaoshu@163.com<br />微信：公共主页-志愿君<br />微博：<a href="http://weibo.com/u/3224913505" target="_blank" style="padding:0;">@学长学姐说专业</a><br />QQ群：133190918<br /><a href="/type/12" style="padding-left:0px;" target="_blank">更多>></a></p>
         </div>
         <span>访问人数：${view_count}</span><span style="margin-left: 20px"><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14021289号</a></span>
     </div>
